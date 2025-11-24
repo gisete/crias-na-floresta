@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+@source "../**/*.{js,ts,jsx,tsx,mdx}";
+
+@theme {
+  /* Fonts */
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-sans: 'Libre Franklin', sans-serif;
+
+  /* Color Palette */
+  --color-light-beige: #f3f0e8;
+  --color-smoke-gray: #2b2928;
+  --color-mossy-green: #4e5040;
+  --color-mossy-green-light: #6b7a65;
+  --color-mossy-green-dark: #3a4138;
+  --color-fog-gray: #887a72;
+  --color-tree: #8fa878;
+}
+
+:root {
+  --background: #fdfaf6;
+  --foreground: #2b2928;
+  --font-serif: var(--font-cormorant);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-light-beige);
+  color: var(--color-smoke-gray);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cormorant);
+  color: var(--color-fog-gray);
+}
