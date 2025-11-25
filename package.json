@@ -6,17 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "payload": "payload"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@payloadcms/bundler-webpack": "^1.0.7",
-    "@payloadcms/db-postgres": "^3.64.0",
-    "@payloadcms/next": "^3.64.0",
-    "@payloadcms/richtext-slate": "^1.5.2",
     "@tailwindcss/postcss": "^4.1.17",
     "next": "16.0.3",
-    "payload": "^2.32.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sharp": "^0.34.5"
