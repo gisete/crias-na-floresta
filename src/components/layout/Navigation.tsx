@@ -6,10 +6,10 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { href: '/quem-somos', label: 'Sobre Nós' },
+  { href: '#', label: 'Sobre Nós' },
   { href: '/a-floresta', label: 'A Floresta' },
   { href: '/galeria', label: 'Galeria' },
-  { href: '/inscricoes', label: 'Inscrições' },
+  { href: '#', label: 'Inscrições' },
 ];
 
 export default function Navigation() {
@@ -40,19 +40,17 @@ export default function Navigation() {
       {/* Desktop Navigation */}
       <ul className="hidden md:flex space-x-8 items-center ml-auto">
         {navLinks.map((link) => (
-          <li key={link.href}>
+          <li key={link.label}>
             <Link href={link.href} className="hover:text-[var(--color-beige-dark)] transition">
               {link.label}
             </Link>
           </li>
         ))}
-        <li className="text-lg">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <li className="flex space-x-4 text-lg">
+          <a href="https://www.instagram.com/crias_na_floresta/" target="_blank" rel="noopener noreferrer">
             <i className="fa-brands fa-instagram"></i>
           </a>
-        </li>
-        <li className="text-lg">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=100092820843772" target="_blank" rel="noopener noreferrer">
             <i className="fa-brands fa-facebook-f"></i>
           </a>
         </li>
@@ -77,7 +75,7 @@ export default function Navigation() {
           </button>
           <ul className="flex flex-col space-y-8 text-center">
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <li key={link.label}>
                 <Link
                   href={link.href}
                   className="text-2xl text-white hover:text-[var(--color-beige-dark)] transition"
@@ -88,10 +86,10 @@ export default function Navigation() {
               </li>
             ))}
             <li className="flex space-x-6 justify-center text-2xl mt-8">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/crias_na_floresta/" target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-instagram"></i>
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/profile.php?id=100092820843772" target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-facebook-f"></i>
               </a>
             </li>

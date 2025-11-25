@@ -41,10 +41,10 @@ export default function AnimatedGallery() {
         {/* Left Image: Vertically Centered relative to the group */}
         <div
           suppressHydrationWarning
-          className={`w-full md:w-1/4 relative h-80 md:h-96 transform translate-y-0 md:translate-y-44 transition-all duration-700 ease-out ${
-            mounted && isVisible ? 'opacity-100' : 'opacity-0 translate-y-20'
+          className={`w-full md:w-1/4 relative h-80 md:h-96 transform md:translate-y-44 transition-all duration-1000 ease-out ${
+            mounted && isVisible ? 'opacity-100' : 'opacity-0 translate-y-32'
           }`}
-          style={{ transitionDelay: '100ms' }}
+          style={{ transitionDelay: '600ms' }}
         >
           <Image
             src="/photos/child-looking.jpg"
@@ -58,10 +58,10 @@ export default function AnimatedGallery() {
         {/* Center Image: Pushed down */}
         <div
           suppressHydrationWarning
-          className={`w-full md:w-3/5 z-10 relative h-[400px] md:h-[500px] transform translate-y-20 md:translate-y-32 transition-all duration-700 ease-out ${
-            mounted && isVisible ? 'opacity-100' : 'opacity-0 translate-y-20'
+          className={`w-full md:w-3/5 z-10 relative h-[400px] md:h-[500px] transform translate-y-20 md:translate-y-32 transition-all duration-1000 ease-out ${
+            mounted && isVisible ? 'opacity-100' : 'opacity-0 translate-y-52'
           }`}
-          style={{ transitionDelay: '400ms' }}
+          style={{ transitionDelay: '300ms' }}
         >
           <Image
             src="/photos/kids-playing.jpg"
@@ -75,10 +75,10 @@ export default function AnimatedGallery() {
         {/* Right Image: Sits at the top */}
         <div
           suppressHydrationWarning
-          className={`w-full md:w-1/4 relative h-120 transform translate-y-0 transition-all duration-700 ease-out ${
-            mounted && isVisible ? 'opacity-100' : 'opacity-0 translate-y-20'
+          className={`w-full md:w-1/4 relative h-120 transform translate-y-0 transition-all duration-1000 ease-out ${
+            mounted && isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-32'
           }`}
-          style={{ transitionDelay: '600ms' }}
+          style={{ transitionDelay: '100ms' }}
         >
           <Image
             src="/photos/child-holding.jpg"

@@ -31,7 +31,7 @@ export default function Footer() {
         {/* Social Icons */}
         <div className="flex justify-center space-x-4 text-lg mb-12">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/crias_na_floresta/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white hover:scale-110 transition"
@@ -39,7 +39,7 @@ export default function Footer() {
             <i className="fa-brands fa-instagram"></i>
           </a>
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/profile.php?id=100092820843772"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white hover:scale-110 transition"

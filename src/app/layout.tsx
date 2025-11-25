@@ -20,12 +20,12 @@ const libreFranklin = Libre_Franklin({
 });
 
 export const metadata: Metadata = {
-  title: "Crias na Floresta - Escola da Floresta em Portugal",
+  title: "Crias Na Floresta",
   description: "Escola da floresta para crianças em Portugal, conectando crianças com a natureza através de educação ao ar livre.",
   keywords: ["escola da floresta", "educação na natureza", "Portugal", "crianças", "aprendizagem ao ar livre"],
   authors: [{ name: "Crias na Floresta" }],
   openGraph: {
-    title: "Crias na Floresta",
+    title: "Crias Na Floresta",
     description: "Escola da floresta para crianças em Portugal",
     type: "website",
   },
@@ -44,7 +44,7 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
       </head>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased" suppressHydrationWarning>
         <Header />
         <main>{children}</main>
         <Footer />

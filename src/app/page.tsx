@@ -1,5 +1,6 @@
 import Hero from '@/components/shared/Hero';
 import AnimatedGallery from '@/components/shared/AnimatedGallery';
+import ACriasGallery from '@/components/shared/ACriasGallery';
 import Image from 'next/image';
 
 export default function Home() {
@@ -15,8 +16,8 @@ export default function Home() {
       />
 
       {/* INTRO SECTION */}
-      <section className="py-24 px-6">
-        <div className="max-w-2xl mx-auto text-center">
+      <section className="py-24 pb-16 px-6">
+        <div className="max-w-xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl mb-12">A Crias</h2>
 
           <div className="space-y-8 text-sm md:text-base leading-relaxed font-light">
@@ -41,24 +42,28 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        {/* Image Gallery */}
+        <ACriasGallery />
       </section>
 
-      {/* STAGGERED GALLERY SECTION (Refined) */}
-      <AnimatedGallery />
-
       {/* QUOTE SECTION */}
-      <section className="py-20 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <div className="mb-6 text-fog-gray opacity-50">
-            <i className="fa-solid fa-leaf text-3xl transform -rotate-45"></i>
+      <section className="pt-8 pb-20 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <div className="mb-6 flex justify-center opacity-50">
+            <Image
+              src="/icons/branch-leaves.png"
+              alt="Branches and leaves decoration"
+              width={68}
+              height={68}
+              className="w-18 h-18 object-contain rotate-[50deg]"
+            />
           </div>
           <blockquote className="font-cormorant text-fog-gray text-xl md:text-2xl italic mb-6 leading-snug">
-            "Quando uma criança entra na floresta ela traz consigo uma multidão de pessoas e
-            criaturas do seu passado ancestral."
+            "O vínculo com a natureza não nasce de um momento único, mas da repetição suave de
+            encontros que se tornam parte de nós. A relação com a floresta é como respirar:
+            contínua, natural e inevitável quando se cultiva com presença. "
           </blockquote>
-          <cite className="not-italic text-xs uppercase tracking-widest text-fog-gray">
-            Bob Hughes
-          </cite>
         </div>
       </section>
 
@@ -118,22 +123,19 @@ export default function Home() {
 
           {/* Text Column */}
           <div className="order-1 md:order-2 md:pl-12">
-            <h2 className="text-5xl md:text-6xl mb-10">Por Trás</h2>
+            <h2 className="text-5xl md:text-6xl mb-10">Guardiões da Floresta</h2>
 
             <div className="space-y-6 text-sm leading-relaxed font-light">
               <p>
-                Na Crias na Floresta convidamos famílias e crianças a abrandar, explorar e criar uma
-                ligação genuína com a natureza através de experiências sensoriais e brincadeiras ao
-                ar livre.
+                Este projeto nasceu de dois corações, há dois anos. Neles viviam a verdade, a
+                alegria, a esperança, a força e o amor. E quando esses corações se encontraram, o
+                amor floresceu — em todas as pequenas e grandes coisas que iam fazendo, todos os
+                dias.
               </p>
               <p>
-                Criado com carinho pela Marta (educadora e guia de Forest School) e pelo Pedro
-                (designer, fotógrafo e apaixonado pela natureza), este é um espaço onde a
-                curiosidade, o cuidado e o sentimento de pertença crescem lado a lado.
-              </p>
-              <p>
-                Os seus valores asseguram que cada criança é ouvida, valorizada e que desfrute da
-                sua liberdade de Ser.
+                Floresceu no cuidado pela Casa-Mãe-Terra, no acolhimento de cada Cria e família que
+                se juntou a esta comunidade, e no cuidar mútuo desses dois corações, que continuam a
+                ser o fogo que alimenta este sonho.
               </p>
             </div>
 
@@ -163,8 +165,10 @@ export default function Home() {
         </div>
 
         {/* Content Box */}
-        <div className="relative z-10 w-full max-w-[800px] mx-4 md:ml-40 bg-mossy-green text-light-beige p-8 md:p-12 shadow-2xl">
-          <h3 className="!text-light-beige text-3xl md:text-4xl mb-8 text-center">O Que Dizem Sobre Nós</h3>
+        <div className="relative z-10 w-full max-w-[700px] mx-4 md:ml-40 bg-mossy-green text-light-beige p-8 md:p-12 md:px-4 md:py-16 shadow-2xl">
+          <h3 className="!text-light-beige text-3xl md:text-4xl mb-8 text-center">
+            A Nossa Comunidade
+          </h3>
 
           <div className="flex items-center gap-10 relative z-20">
             {/* Left Arrow */}
@@ -187,13 +191,13 @@ export default function Home() {
             </button>
 
             {/* Quote Text */}
-            <p className="text-sm md:text-[0.95rem] leading-[1.9] font-light opacity-90 max-w-[520px]">
+            <p className="text-sm md:text-[0.95rem] leading-[1.9] font-light opacity-90 max-w-[620px]">
               "Recomendo por completo a experiência com as Crias na Floresta. Um espaço muito
               cuidado, com muitas atividades em que a liberdade das crianças para explorar tudo o
               que as rodeia é a prioridade. As pessoas são muito simpáticas e atenciosas com as
               crianças. Depois de duas horas repletas de brincadeira, termina da melhor forma com as
-              crianças a cantarem e a ouvirem uma história despertando todos os sentidos delas
-              para o que acabaram de vivenciar. Sem dúvida será para repetir!"
+              crianças a cantarem e a ouvirem uma história despertando todos os sentidos delas para
+              o que acabaram de vivenciar. Sem dúvida será para repetir!"
             </p>
 
             {/* Right Arrow */}
@@ -216,7 +220,7 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Leaf Decoration */}
+          {/* Leaf Decoration
           <div className="absolute bottom-5 left-5 w-[100px] h-[120px] opacity-50 pointer-events-none z-10">
             <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 110 Q 40 60, 90 10" stroke="#F2F0E6" strokeWidth="0.8" />
@@ -227,7 +231,7 @@ export default function Home() {
               <path d="M55 40 Q 40 30, 45 20" stroke="#F2F0E6" strokeWidth="0.8" />
               <path d="M65 30 Q 80 20, 75 10" stroke="#F2F0E6" strokeWidth="0.8" />
             </svg>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

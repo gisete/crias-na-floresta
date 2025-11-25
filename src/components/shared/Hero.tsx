@@ -75,11 +75,6 @@ export default function Hero({
             />
           )}
         </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 w-full text-center text-white animate-bounce">
-          <i className="fa-solid fa-chevron-down"></i>
-        </div>
       </section>
     );
   }

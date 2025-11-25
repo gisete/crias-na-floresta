@@ -1,9 +1,10 @@
 import Hero from '@/components/shared/Hero';
 import Image from 'next/image';
+import SessoesGallery from '@/components/shared/SessoesGallery';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'A Floresta - Crias na Floresta',
+  title: 'Crias Na Floresta | A Floresta',
   description:
     'Descubra o nosso espaço na floresta, onde as crianças aprendem e exploram através do Forest School.',
 };
@@ -20,7 +21,7 @@ export default function AFloresta() {
       />
 
       {/* FOREST SCHOOL - O QUE É */}
-      <section className="py-20 pb-24 px-6">
+      <section className="py-24 pb-28 px-6">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-6xl text-center mb-20">Forest School</h1>
 
@@ -68,22 +69,28 @@ export default function AFloresta() {
 
             {/* Text Content */}
             <div className="pt-10 space-y-6 text-sm leading-relaxed font-light">
-              <h2 className="text-3xl md:text-4xl mb-8">O Que É</h2>
-              <p className="text-[#3a3a3a]">
-                O Forest School é uma abordagem educativa ao ar livre que nasceu no norte da Europa
-                e que se baseia em encontros regulares em ambientes naturais, como florestas ou
-                bosques.
+              <p>
+                O Forest School é uma abordagem que assente e princípios e pilares próprios baseados
+                na conexão direta e constante com a natureza, olhando para o ser humano como um
+                todo.
               </p>
-              <p className="text-[#3a3a3a]">
-                A ideia central é que a criança aprenda através da experiência direta, do brincar
-                livre e da relação contínua com o mesmo espaço natural, ao longo das estações. Em
-                vez de atividades estruturadas, o adulto prepara um ambiente seguro e rico em
-                possibilidades.
+              <p>
+                O Forest School encanta, entusiasma, traz magia. Convida à reflexão e provoca.
+                Transforma.
               </p>
-              <p className="text-[#3a3a3a]">
-                Assim, promove-se o desenvolvimento físico, emocional, social e cognitivo, ao mesmo
-                tempo que se cultivam autonomia, resiliência e um profundo respeito pela natureza.
+
+              <p>
+                Trata-se de um programa de sessões regulares ao longo do ano, em todas as estações
+                do ano, independentemente das condições atmosféricas, permitindo às crianças e ao
+                adulto desenvolver uma relação profunda e de recipriocidade com o mundo natural,
+                humano e não humano compreendendo os seus ciclos, ritmos e transformações.
               </p>
+              <p>
+                No respeito, na liberdade e curiosidade, o Forest School proporciona à criança uma
+                aprendizagem viva e significativa para toda a vida — pelo corpo, pelo coração e pela
+                experiência. É um processo bonito e nutritivo.
+              </p>
+              <p>Mais do que uma metodologia, é uma forma de estar no mundo. </p>
             </div>
           </div>
         </div>
@@ -102,7 +109,7 @@ export default function AFloresta() {
               <svg className="w-10 h-10 stroke-white fill-none stroke-[1.5]" viewBox="0 0 24 24">
                 <path d="M12 22c4.97 0 9-4.03 9-9c0-4.97-9-13-9-13S3 8.03 3 13c0 4.97 4.03 9 9 9z" />
               </svg>
-              <h4 className="text-sm uppercase tracking-wider">Conexão</h4>
+              <h4 className="text-sm !text-light-beige uppercase tracking-wider">Conexão</h4>
               <p className="text-sm opacity-90">
                 A criança descobre árvores, insetos, água e pedras, percebendo que faz parte deste
                 lugar vivo.
@@ -115,7 +122,9 @@ export default function AFloresta() {
                 <path d="M12 3v19M5 10l7-7 7 7" />
                 <path d="M18 14a6 6 0 0 1-12 0" />
               </svg>
-              <h4 className="text-sm uppercase tracking-wider">Sentidos Despertos</h4>
+              <h4 className="text-sm !text-light-beige uppercase tracking-wider">
+                Sentidos Despertos
+              </h4>
               <p className="text-sm opacity-90">
                 Texturas, cheiros e sons da floresta convidam a observar com atenção, curiosidade e
                 presença.
@@ -127,7 +136,7 @@ export default function AFloresta() {
               <svg className="w-10 h-10 stroke-white fill-none stroke-[1.5]" viewBox="0 0 24 24">
                 <path d="M2 22l10-10 10 10M12 2L2 22" />
               </svg>
-              <h4 className="text-sm uppercase tracking-wider">Brincar Livre</h4>
+              <h4 className="text-sm !text-light-beige uppercase tracking-wider">Brincar Livre</h4>
               <p className="text-sm opacity-90">
                 Galhos, folhas e lama tornam-se brinquedos abertos para imaginar, experimentar e
                 criar sem pressa.
@@ -139,7 +148,9 @@ export default function AFloresta() {
               <svg className="w-10 h-10 stroke-white fill-none stroke-[1.5]" viewBox="0 0 24 24">
                 <path d="M20 6L9 17l-5-5" />
               </svg>
-              <h4 className="text-sm uppercase tracking-wider">Autonomia e Confiança</h4>
+              <h4 className="text-sm !text-light-beige uppercase tracking-wider">
+                Autonomia e Confiança
+              </h4>
               <p className="text-sm opacity-90">
                 Ao enfrentar pequenos desafios na natureza, a criança aprende a confiar em si e a
                 tomar decisões.
@@ -159,42 +170,14 @@ export default function AFloresta() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-end gap-5 max-w-5xl mx-auto">
-          <div className="w-full md:w-1/4 relative h-64 mb-5">
-            <Image
-              src="/photos/a-floresta-1.jpg"
-              alt="Group activity"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 25vw"
-            />
-          </div>
-          <div className="w-full md:w-2/5 relative h-96">
-            <Image
-              src="/photos/a-floresta-2.jpg"
-              alt="Wide shot forest"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 40vw"
-            />
-          </div>
-          <div className="w-full md:w-1/5 relative h-72 mb-20">
-            <Image
-              src="/photos/a-floresta-3.jpg"
-              alt="Climbing"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 20vw"
-            />
-          </div>
-        </div>
+        <SessoesGallery />
       </section>
 
       {/* COMO FUNCIONA */}
       <section className="py-12 pb-24 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-12">
           {/* Left Text */}
-          <div className="space-y-6 text-sm leading-relaxed">
+          <div className="space-y-6 pt-8 text-sm leading-relaxed">
             <h3 className="text-3xl md:text-4xl leading-tight">
               Pode começar assim,
               <br />
