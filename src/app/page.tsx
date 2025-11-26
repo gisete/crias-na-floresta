@@ -8,11 +8,14 @@ export default function Home() {
     <div>
       {/* HERO SECTION */}
       <Hero
-        type="image"
+        type="video"
+        videoSrc="/videos/homepage-hero.mp4"
+        placeholderSrc="/photos/homepage-hero-placeholder.jpg"
         imageSrc="/photos/group-gathering.jpg"
         alt="Forest Background"
         variant="homepage"
         logoSrc="/images/crias-na-floresta-logo.png"
+        objectPosition="center center"
       />
 
       {/* INTRO SECTION */}

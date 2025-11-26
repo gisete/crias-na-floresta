@@ -21,12 +21,12 @@ const libreFranklin = Libre_Franklin({
 
 export const metadata: Metadata = {
   title: "Crias Na Floresta",
-  description: "Escola da floresta para crianças em Portugal, conectando crianças com a natureza através de educação ao ar livre.",
+  description: "Forest school, aprendizagem na natureza",
   keywords: ["escola da floresta", "educação na natureza", "Portugal", "crianças", "aprendizagem ao ar livre"],
   authors: [{ name: "Crias na Floresta" }],
   openGraph: {
     title: "Crias Na Floresta",
-    description: "Escola da floresta para crianças em Portugal",
+    description: "Forest school, aprendizagem na natureza",
     type: "website",
   },
 };
