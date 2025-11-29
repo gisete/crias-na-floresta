@@ -9,7 +9,11 @@ const navLinks = [
   { href: '#', label: 'Sobre Nós' },
   { href: '/a-floresta', label: 'A Floresta' },
   { href: '/galeria', label: 'Galeria' },
-  { href: '#', label: 'Inscrições' },
+  {
+    href: 'https://linktr.ee/criasnafloresta?utm_source=linktree_profile_share&ltsid=4f33675b-3a69-4f1f-a42e-a8866159c4ca',
+    label: 'Inscrições',
+    target: '_blank',
+  },
 ];
 
 export default function Navigation() {
@@ -41,16 +45,28 @@ export default function Navigation() {
       <ul className="hidden md:flex space-x-8 items-center ml-auto">
         {navLinks.map((link) => (
           <li key={link.label}>
-            <Link href={link.href} className="hover:text-[var(--color-beige-dark)] transition">
+            <Link
+              href={link.href}
+              target={link.target}
+              className="hover:text-[var(--color-beige-dark)] transition"
+            >
               {link.label}
             </Link>
           </li>
         ))}
         <li className="flex space-x-4 text-lg">
-          <a href="https://www.instagram.com/crias_na_floresta/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/crias_na_floresta/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://www.facebook.com/profile.php?id=100092820843772" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.facebook.com/profile.php?id=100092820843772"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fa-brands fa-facebook-f"></i>
           </a>
         </li>
@@ -80,16 +96,25 @@ export default function Navigation() {
                   href={link.href}
                   className="text-2xl text-white hover:text-[var(--color-beige-dark)] transition"
                   onClick={() => setIsOpen(false)}
+                  target={link.target}
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
             <li className="flex space-x-6 justify-center text-2xl mt-8">
-              <a href="https://www.instagram.com/crias_na_floresta/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com/crias_na_floresta/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fa-brands fa-instagram"></i>
               </a>
-              <a href="https://www.facebook.com/profile.php?id=100092820843772" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.facebook.com/profile.php?id=100092820843772"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fa-brands fa-facebook-f"></i>
               </a>
             </li>

@@ -196,7 +196,8 @@ export default function AFloresta() {
 
             <div className="pt-4">
               <a
-                href="/inscricoes"
+                href="https://linktr.ee/criasnafloresta?utm_source=linktree_profile_share&ltsid=4f33675b-3a69-4f1f-a42e-a8866159c4ca"
+                target="_blank"
                 className="text-xs uppercase tracking-widest text-fog-gray border-b border-fog-gray pb-1 hover:opacity-70 transition"
               >
                 Inscreve-te &rarr;

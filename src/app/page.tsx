@@ -90,19 +90,20 @@ export default function Home() {
 
           <div className="space-y-6 text-sm md:text-base font-light leading-relaxed text-left">
             <p>
-              Há experiências que só acontecem quando estamos lá fora — entre árvores, ramos e risos
-              partilhados.
+              O exemplo, vivido e partilhado, é a ponte que alimenta esta ligação profunda. Assim, a
+              natureza deixa de ser apenas um cenário. Torna-se extensão da infância, casa, espelho
+              e companheira de crescimento.
             </p>
             <p>
-              Convidamos famílias e crianças a viver a magia de aprender e crescer na natureza, em
-              momentos que despertam o brincar, a curiosidade e o sentido de pertença.
+              Que possamos ser parte desta ligação, não só para as crianças, mas para todos nós.
             </p>
           </div>
 
           <div className="mt-10 text-left">
             <a
-              href="/inscricoes"
+              href="https://linktr.ee/criasnafloresta?utm_source=linktree_profile_share&ltsid=4f33675b-3a69-4f1f-a42e-a8866159c4ca"
               className="text-xs uppercase tracking-widest border-b border-light-beige border-opacity-50 pb-1 hover:text-white hover:border-white transition"
+              target="_blank"
             >
               Inscreve-te &rarr;
             </a>
