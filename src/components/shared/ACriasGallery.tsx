@@ -48,7 +48,7 @@ export default function ACriasGallery() {
         style={{ transitionDelay: '100ms' }}
       >
         <Image
-          src="/photos/child-looking.jpg"
+          src="/photos/home-gallery-1.webp"
           alt="Child exploring"
           fill
           className="object-cover shadow-lg"
@@ -63,7 +63,7 @@ export default function ACriasGallery() {
         style={{ transitionDelay: '300ms' }}
       >
         <Image
-          src="/photos/kids-playing.jpg"
+          src="/photos/home-gallery-2.webp"
           alt="Children playing in nature"
           fill
           className="object-cover shadow-xl"
@@ -78,7 +78,7 @@ export default function ACriasGallery() {
         style={{ transitionDelay: '500ms' }}
       >
         <Image
-          src="/photos/child-holding.jpg"
+          src="/photos/hero-3.webp"
           alt="Child in forest"
           fill
           className="object-cover shadow-lg"

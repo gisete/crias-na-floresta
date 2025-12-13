@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { href: '#', label: 'Sobre Nós' },
+  { href: '/guardioes', label: 'Guardiões' },
   { href: '/a-floresta', label: 'A Floresta' },
   { href: '/galeria', label: 'Galeria' },
   {

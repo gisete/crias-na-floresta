@@ -23,23 +23,23 @@ export default function Home() {
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl mb-12">A Crias</h2>
 
-          <div className="space-y-8 text-sm md:text-base leading-relaxed font-light">
+          <div className="space-y-8 text-base leading-relaxed font-light">
             <p>
               A Crias na Floresta inspira crianças e famílias a reencontrar o ritmo da natureza,
               despertando o cuidado, a curiosidade e o encantamento por tudo o que vive à nossa
               volta.
             </p>
             <p>
-              Através do brincar livre, da escuta atenta e da vivência das estações, cultivamos
-              vínculos profundos, consciência ecológica e um amor genuíno pelo mundo natural que nos
-              acolhe.
+              A floresta convida a alinhar a nossa energia com a frequência da Terra. É nesse
+              alinhamento que nasce a verdadeira conexão - a que não precisa de palavras, apenas de
+              presença.
             </p>
           </div>
 
           <div className="mt-16">
             <a
               href="/a-floresta"
-              className="text-xs uppercase tracking-widest text-fog-gray border-b border-fog-gray pb-1 hover:opacity-70 transition duration-300"
+              className="text-sm uppercase tracking-widest text-fog-gray border-b border-fog-gray pb-1 hover:opacity-70 transition duration-300"
             >
               Conheça a nossa floresta &rarr;
             </a>
@@ -63,9 +63,9 @@ export default function Home() {
             />
           </div>
           <blockquote className="font-cormorant text-fog-gray text-xl md:text-2xl italic mb-6 leading-snug">
-            "O vínculo com a natureza não nasce de um momento único, mas da repetição suave de
+            O vínculo com a natureza não nasce de um momento único, mas da repetição suave de
             encontros que se tornam parte de nós. A relação com a floresta é como respirar:
-            contínua, natural e inevitável quando se cultiva com presença. "
+            contínua, natural e inevitável quando se cultiva com presença.
           </blockquote>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function Home() {
             Junta-Te A Nós Na Floresta
           </h2>
 
-          <div className="space-y-6 text-sm md:text-base font-light leading-relaxed text-left">
+          <div className="space-y-6 text-base font-light leading-relaxed text-left">
             <p>
               O exemplo, vivido e partilhado, é a ponte que alimenta esta ligação profunda. Assim, a
               natureza deixa de ser apenas um cenário. Torna-se extensão da infância, casa, espelho
@@ -102,7 +102,7 @@ export default function Home() {
           <div className="mt-10 text-left">
             <a
               href="https://linktr.ee/criasnafloresta?utm_source=linktree_profile_share&ltsid=4f33675b-3a69-4f1f-a42e-a8866159c4ca"
-              className="text-xs uppercase tracking-widest border-b border-light-beige border-opacity-50 pb-1 hover:text-white hover:border-white transition"
+              className="text-sm uppercase tracking-widest border-b border-light-beige border-opacity-50 pb-1 hover:text-white hover:border-white transition"
               target="_blank"
             >
               Inscreve-te &rarr;
@@ -117,7 +117,7 @@ export default function Home() {
           {/* Image Column */}
           <div className="order-2 md:order-1 relative h-[600px]">
             <Image
-              src="/photos/marta.jpg"
+              src="/photos/home-pedro-marta.webp"
               alt="Team Member"
               fill
               className="object-cover"
@@ -129,12 +129,11 @@ export default function Home() {
           <div className="order-1 md:order-2 md:pl-12">
             <h2 className="text-5xl md:text-6xl mb-10">Guardiões da Floresta</h2>
 
-            <div className="space-y-6 text-sm leading-relaxed font-light">
+            <div className="space-y-6 text-base leading-relaxed font-light">
               <p>
-                Este projeto nasceu de dois corações, há dois anos. Neles viviam a verdade, a
-                alegria, a esperança, a força e o amor. E quando esses corações se encontraram, o
-                amor floresceu — em todas as pequenas e grandes coisas que iam fazendo, todos os
-                dias.
+                Este projeto nasceu de dois corações. Neles viviam a verdade, a alegria, a
+                esperança, a força e o amor. E quando esses corações se encontraram, o amor
+                floresceu — em todas as pequenas e grandes coisas que iam fazendo, todos os dias.
               </p>
               <p>
                 Floresceu no cuidado pela Casa-Mãe-Terra, no acolhimento de cada Cria e família que
@@ -145,8 +144,8 @@ export default function Home() {
 
             <div className="mt-12">
               <a
-                href="/quem-somos"
-                className="text-xs uppercase tracking-widest text-fog-gray border-b border-fog-gray pb-1 hover:opacity-70 transition"
+                href="/guardioes"
+                className="text-sm uppercase tracking-widest text-fog-gray border-b border-fog-gray pb-1 hover:opacity-70 transition"
               >
                 Conheça &rarr;
               </a>
@@ -160,7 +159,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 md:left-[30%]">
           <Image
-            src="/photos/kids-playing-worm.jpg"
+            src="/photos/home-bg-comunidade.jpg"
             alt="Kids hands in dirt"
             fill
             className="object-cover"
@@ -195,7 +194,7 @@ export default function Home() {
             </button>
 
             {/* Quote Text */}
-            <p className="text-sm md:text-[0.95rem] leading-[1.9] font-light opacity-90 max-w-[620px]">
+            <p className="text-base leading-[1.9] font-light opacity-90 max-w-[620px]">
               "Recomendo por completo a experiência com as Crias na Floresta. Um espaço muito
               cuidado, com muitas atividades em que a liberdade das crianças para explorar tudo o
               que as rodeia é a prioridade. As pessoas são muito simpáticas e atenciosas com as

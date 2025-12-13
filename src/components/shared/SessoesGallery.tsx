@@ -48,7 +48,7 @@ export default function SessoesGallery() {
         style={{ transitionDelay: '100ms' }}
       >
         <Image
-          src="/photos/a-floresta-1.jpg"
+          src="/photos/floresta-sessoes-1.webp"
           alt="Group activity"
           fill
           className="object-cover"
@@ -63,7 +63,7 @@ export default function SessoesGallery() {
         style={{ transitionDelay: '300ms' }}
       >
         <Image
-          src="/photos/a-floresta-2.jpg"
+          src="/photos/floresta-sessoes-2.webp"
           alt="Wide shot forest"
           fill
           className="object-cover"
@@ -78,7 +78,7 @@ export default function SessoesGallery() {
         style={{ transitionDelay: '500ms' }}
       >
         <Image
-          src="/photos/a-floresta-3.jpg"
+          src="/photos/floresta-sessoes-3.webp"
           alt="Climbing"
           fill
           className="object-cover"

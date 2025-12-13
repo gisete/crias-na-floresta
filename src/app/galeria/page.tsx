@@ -61,7 +61,7 @@ export default function Galeria() {
       {/* Gallery Header */}
       <section className="py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-fog-gray mb-4">
+          <p className="text-sm uppercase tracking-widest text-fog-gray mb-4">
             Memórias da Natureza
           </p>
           <div className="w-16 h-px bg-fog-gray mx-auto mb-8 opacity-30"></div>
