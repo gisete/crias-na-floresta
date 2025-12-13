@@ -6,7 +6,8 @@
       "Bash(npm run lint)",
       "Bash(tree:*)",
       "Bash(npm uninstall:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(npx fix-react2shell-next:*)"
     ],
     "deny": [],
     "ask": []
