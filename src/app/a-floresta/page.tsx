@@ -23,10 +23,10 @@ export default function AFloresta() {
 
       {/* FOREST SCHOOL - O QUE É */}
       <section className="py-24 pb-28 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl md:text-6xl text-center mb-20 text-fog-gray">Forest School</h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-16 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-16 items-start">
             {/* Images Container */}
             <div className="flex gap-6 items-start">
               {/* Left Column: 2 Stacked Images */}

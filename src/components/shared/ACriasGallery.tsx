@@ -38,7 +38,7 @@ export default function ACriasGallery() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col md:flex-row justify-center items-end gap-5 max-w-5xl mx-auto mt-16"
+      className="flex flex-col md:flex-row justify-center items-end gap-5 max-w-6xl mx-auto mt-16"
     >
       <div
         suppressHydrationWarning

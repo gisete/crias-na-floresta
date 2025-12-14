@@ -1,14 +1,41 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import Hero from '@/components/shared/Hero';
 import Container from '@/components/shared/Container';
 import Image from 'next/image';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Quem Somos - Crias na Floresta',
-  description: 'Conheça a nossa equipa, o nosso manifesto e a nossa missão.',
-};
 
 export default function QuemSomos() {
+  const [isImageVisible, setIsImageVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsImageVisible(true);
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        observer.unobserve(imageRef.current);
+      }
+    };
+  }, []);
   return (
     <div>
       {/* HERO */}
@@ -48,9 +75,9 @@ export default function QuemSomos() {
           </div>
 
           {/* Centered Text Content */}
-          <div className="max-w-3xl mx-auto text-center font-light leading-relaxed space-y-12 text-base">
+          <div className="max-w-4xl mx-auto text-center font-light leading-relaxed space-y-12 text-base">
             <p className="opacity-90">
-              <strong className="font-bold text-smoke-gray opacity-100 block mb-2">
+              <strong className="font-bold text-smoke-gray opacity-100 block">
                 A Marta, Educadora de Infância, formada e certificada em Forest School Leader,
                 coração e raiz da Crias.
               </strong>
@@ -60,19 +87,15 @@ export default function QuemSomos() {
             </p>
 
             <p className="opacity-90">
-              <strong className="font-bold text-smoke-gray opacity-100 block mb-2">
+              <strong className="font-bold text-smoke-gray opacity-100 block">
                 O Pedro é alma e chama.
               </strong>
               A sua sabedoria, fruto de uma profunda ligação e formação ambiental, faz com que
               reconheça cada planta, árvore e som da floresta — conhece-lhes o nome, o aroma e o
               tempo de cada uma como quem escuta o coração da natureza. O Pedro é natureza, guardião
               das histórias e do tempo que corre devagar. É presença constante, porto seguro e
-              inspiração para todos os que fazem parte desta comunidade.
-            </p>
-
-            <p className="opacity-90 italic pt-4">
-              Com serenidade e criatividade sustenta, juntamente com a Marta, esta floresta de
-              sentido e propósito.
+              inspiração para todos os que fazem parte desta comunidade. Com serenidade e
+              criatividade sustenta, juntamente com a Marta, esta floresta de sentido e propósito.
             </p>
           </div>
         </Container>
@@ -88,14 +111,20 @@ export default function QuemSomos() {
               {/* Vertical Line Separator */}
               <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-[80%] w-px bg-light-beige/30"></div>
 
-              <h2 className="text-5xl md:text-7xl leading-[0.9] mb-12 text-light-beige">
+              <h2 className="text-5xl md:text-7xl leading-[0.9] mb-12 !text-light-beige">
                 Nosso
                 <br />
                 Manifesto
               </h2>
 
               {/* Image Container - Aspect ratio preserves the look but follows column width */}
-              <div className="relative w-full aspect-[4/5] md:aspect-[3/4]">
+              <div
+                ref={imageRef}
+                suppressHydrationWarning
+                className={`relative w-full aspect-[4/5] md:aspect-[3/4] transition-all duration-1000 ease-out ${
+                  mounted && isImageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-32'
+                }`}
+              >
                 <Image
                   src="/photos/kids-looking.jpg"
                   alt="Manifesto"
@@ -122,9 +151,9 @@ export default function QuemSomos() {
                 aqueles em que se prepara o solo.
               </p>
 
-              <blockquote className="font-cormorant text-2xl md:text-3xl italic text-center my-12 leading-tight text-white opacity-100">
-                "Há cada vez menos Natureza disponível — e as crianças estão, também elas, cada vez
-                mais longe dela."
+              <blockquote className="font-cormorant text-2xl md:text-3xl italic my-12 leading-tight text-white opacity-100">
+                Há cada vez menos Natureza disponível — e as crianças estão, também elas, cada vez
+                mais longe dela.
               </blockquote>
 
               <p>

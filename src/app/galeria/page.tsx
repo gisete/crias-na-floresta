@@ -4,20 +4,25 @@ import { useState } from 'react';
 import Hero from '@/components/shared/Hero';
 import Image from 'next/image';
 
-// Sample gallery images - replace with your actual photos
 const galleryImages = [
-  { src: '/photos/child-looking.jpg', alt: 'Child exploring in forest' },
-  { src: '/photos/kids-playing.jpg', alt: 'Children playing in nature' },
-  { src: '/photos/child-holding.jpg', alt: 'Child in forest' },
-  { src: '/photos/marta-playing.jpg', alt: 'Kids in forest' },
-  { src: '/photos/kids-looking.jpg', alt: 'Playing in mud' },
-  { src: '/photos/kids-jumping-adult.jpg', alt: 'Playing with adult' },
-  { src: '/photos/a-floresta-1.jpg', alt: 'Group activity' },
-  { src: '/photos/a-floresta-2.jpg', alt: 'Wide shot forest' },
-  { src: '/photos/a-floresta-3.jpg', alt: 'Climbing' },
-  { src: '/photos/kids-playing-worm.jpg', alt: 'Kids hands in dirt' },
-  { src: '/photos/group-gathering.jpg', alt: 'Group gathering' },
-  { src: '/photos/holding-basket.jpg', alt: 'Holding basket' },
+  { src: '/gallery/crias-gallery-1.webp', alt: 'Criança a baloiçar numa corda na floresta' },
+  { src: '/gallery/crias-gallery-2.webp', alt: 'Criança com expressão de surpresa a tapar a boca' },
+  { src: '/gallery/crias-gallery-3.webp', alt: 'Criança a olhar para livro infantil "Vamos à caça do urso"' },
+  { src: '/gallery/crias-gallery-4.webp', alt: 'Família e crianças sentadas numa estrutura de madeira na floresta' },
+  { src: '/gallery/crias-gallery-5.webp', alt: 'Criança a brincar com carrinho de madeira e laranjas na floresta' },
+  { src: '/gallery/crias-gallery-6.webp', alt: 'Bebé com mochila a preto e branco' },
+  { src: '/gallery/crias-gallery-7.webp', alt: 'Criança descalça a brincar com utensílios de cozinha de madeira' },
+  { src: '/gallery/crias-gallery-8.webp', alt: 'Criança deitada nas folhas de outono' },
+  { src: '/gallery/crias-gallery-9.webp', alt: 'Duas crianças de costas a olhar para baloiço de madeira' },
+  { src: '/gallery/crias-gallery-10.webp', alt: 'Criança envolta em manta com palavras sobre sonhar, viver, brincar e liberdade' },
+  { src: '/gallery/crias-gallery-11.webp', alt: 'Pés de criança sobre tábua de madeira com folhas de outono flutuando na água' },
+  { src: '/gallery/crias-gallery-12.webp', alt: 'Criança a escalar estrutura de madeira vista de cima' },
+  { src: '/gallery/crias-gallery-13.webp', alt: 'Criança a bater panela com colher de pau' },
+  { src: '/gallery/crias-gallery-14.webp', alt: 'Educadora e bebé sentados numa mesa de madeira ao pôr do sol' },
+  { src: '/gallery/crias-gallery-15.webp', alt: 'Criança a explorar flores e sementes na natureza' },
+  { src: '/gallery/crias-gallery-16.webp', alt: 'Grupo de crianças pequenas num abraço coletivo' },
+  { src: '/gallery/crias-gallery-17.webp', alt: 'Crianças sentadas num tronco com movimento e energia' },
+  { src: '/gallery/crias-gallery-18.webp', alt: 'Bebé e adulto a explorar galhos e paus na floresta' },
 ];
 
 export default function Galeria() {

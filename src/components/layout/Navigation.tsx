@@ -6,8 +6,8 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { href: '/guardioes', label: 'Guardiões' },
   { href: '/a-floresta', label: 'A Floresta' },
+  { href: '/guardioes', label: 'Guardiões' },
   { href: '/galeria', label: 'Galeria' },
   {
     href: 'https://linktr.ee/criasnafloresta?utm_source=linktree_profile_share&ltsid=4f33675b-3a69-4f1f-a42e-a8866159c4ca',
@@ -22,7 +22,7 @@ export default function Navigation() {
   const isHomepage = pathname === '/';
 
   return (
-    <nav className="text-white text-xs font-medium tracking-widest uppercase flex items-center justify-between w-full">
+    <nav className="text-white text-sm font-medium tracking-widest uppercase flex items-center justify-between w-full">
       {/* Logo - Always reserve space, but only show on subpages */}
       <div className="flex-shrink-0">
         {!isHomepage ? (
