@@ -42,15 +42,17 @@ export default function QuemSomos() {
       <Hero
         type="image"
         imageSrc="/photos/hero-a-floresta.jpg"
-        alt="Guardiões"
+        alt="Guardiões da Floresta"
         variant="page"
-        title="Guardiões"
+        title="Guardiões da Floresta"
       />
 
       {/* QUEM SOMOS SECTION */}
       <section className="py-32 px-6 bg-light-beige text-smoke-gray">
         <Container>
-          <h2 className="text-5xl md:text-6xl text-center mb-16 text-fog-gray">Quem Somos</h2>
+          <h2 className="text-5xl md:text-6xl text-center mb-16 text-fog-gray max-w-md mx-auto">
+            Sobre Nós
+          </h2>
 
           {/* Dual Image Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
@@ -122,7 +124,9 @@ export default function QuemSomos() {
                 ref={imageRef}
                 suppressHydrationWarning
                 className={`relative w-full aspect-[4/5] md:aspect-[3/4] transition-all duration-1000 ease-out ${
-                  mounted && isImageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-32'
+                  mounted && isImageVisible
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-32'
                 }`}
               >
                 <Image
@@ -183,7 +187,7 @@ export default function QuemSomos() {
       </section>
 
       {/* A NOSSA DIFERENÇA SECTION */}
-      <section className="py-32 bg-light-beige">
+      <section className="pt-32 bg-light-beige">
         <Container className="max-w-6xl">
           <h2 className="text-5xl md:text-6xl text-center mb-16 text-fog-gray">
             A Nossa Diferença
@@ -233,7 +237,7 @@ export default function QuemSomos() {
       </section>
 
       {/* A NOSSA COMUNIDADE SECTION */}
-      <section className="py-32 bg-light-beige">
+      <section className="py-32 pb-38 bg-light-beige">
         <Container>
           <h2 className="text-5xl md:text-6xl text-center mb-12 text-fog-gray">
             A Nossa Comunidade

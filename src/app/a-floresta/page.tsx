@@ -69,7 +69,7 @@ export default function AFloresta() {
             </div>
 
             {/* Text Content */}
-            <div className="pt-10 space-y-6 text-base leading-relaxed font-light text-smoke-gray">
+            <div className="mt-20 space-y-6 text-base leading-relaxed font-light text-smoke-gray">
               <p>
                 O Forest School encanta, entusiasma, traz magia. Convida à reflexão e provoca.
                 Transforma.

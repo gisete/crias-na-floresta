@@ -205,7 +205,7 @@ export default function Hero({
       {/* Centered Title */}
       {title && (
         <div className="absolute inset-0 flex flex-col justify-center items-center z-10 text-light-beige px-6">
-          <h1 className="text-5xl md:text-8xl !text-light-beige font-thin text-center drop-shadow-2xl">
+          <h1 className="text-5xl md:text-8xl !text-light-beige font-thin text-center drop-shadow-2xl max-w-2xl">
             {title}
           </h1>
         </div>
