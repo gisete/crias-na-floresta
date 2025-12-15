@@ -64,7 +64,7 @@ export default function Galeria() {
       />
 
       {/* Gallery Header */}
-      <section className="py-24 px-6">
+      <section className="py-32 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-sm uppercase tracking-widest text-fog-gray mb-4">
             Memórias da Natureza
@@ -76,7 +76,7 @@ export default function Galeria() {
       </section>
 
       {/* Masonry Gallery Grid */}
-      <section className="pb-24 px-6">
+      <section className="pb-32 px-6">
         <div className="max-w-[1200px] mx-auto columns-1 md:columns-2 lg:columns-3 gap-8">
           {galleryImages.map((image, index) => (
             <div

@@ -19,7 +19,7 @@ export default function Home() {
       />
 
       {/* INTRO SECTION */}
-      <section className="py-24 pb-16 px-6">
+      <section className="py-32 px-6">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl mb-12">A Crias</h2>
 
@@ -51,7 +51,7 @@ export default function Home() {
       </section>
 
       {/* QUOTE SECTION */}
-      <section className="pt-8 pb-20 px-6 text-center">
+      <section className="pb-32 px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <div className="mb-6 flex justify-center opacity-50">
             <Image
@@ -112,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* "POR TRÁS" */}
-      <section className="py-24 px-6 md:px-12 overflow-hidden">
+      <section className="py-32 px-6 md:px-12 overflow-hidden">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Image Column */}
           <div className="order-2 md:order-1 relative h-[600px]">
@@ -155,7 +155,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIAL SECTION */}
-      <section className="relative py-24 md:py-32 min-h-[700px] flex items-center overflow-hidden mb-20">
+      <section className="relative py-24 md:py-32 min-h-[700px] flex items-center overflow-hidden mb-30">
         {/* Background Image */}
         <div className="absolute inset-0 md:left-[30%]">
           <Image

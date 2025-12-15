@@ -22,7 +22,7 @@ export default function AFloresta() {
       />
 
       {/* FOREST SCHOOL - O QUE É */}
-      <section className="py-24 pb-28 px-6">
+      <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl md:text-6xl text-center mb-20 text-fog-gray">Forest School</h1>
 
@@ -93,7 +93,7 @@ export default function AFloresta() {
       </section>
 
       {/* FEATURES - APRENDER COM A FLORESTA */}
-      <section className="bg-mossy-green text-light-beige py-20">
+      <section className="bg-mossy-green text-light-beige py-32">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="!text-light-beige text-4xl md:text-5xl text-center mb-16">
             Sentir A Floresta
@@ -160,7 +160,7 @@ export default function AFloresta() {
       </section>
 
       {/* SESSÕES */}
-      <section className="py-24 px-6 bg-light-beige">
+      <section className="py-32 px-6 bg-light-beige">
         <div className="max-w-2xl mx-auto text-center mb-16">
           <h2 className="text-5xl md:text-6xl mb-8 text-fog-gray">Sessões</h2>
           <p className="text-base leading-relaxed text-smoke-gray">
@@ -173,7 +173,7 @@ export default function AFloresta() {
       </section>
 
       {/* COMO FUNCIONA */}
-      <section className="py-24 bg-light-beige px-6">
+      <section className="pb-32 pt-8 bg-light-beige px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
             {/* Left Column: Story Text (No Background) */}
@@ -303,7 +303,7 @@ export default function AFloresta() {
       </section>
 
       {/* VIDEO SECTION */}
-      <section className="pb-28 px-6 bg-light-beige">
+      <section className="pb-32 px-6 bg-light-beige">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-6xl text-center mb-12 text-fog-gray">
             Um Dia Na Floresta
