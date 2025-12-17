@@ -38,11 +38,11 @@ export default function SessoesGallery() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col md:flex-row justify-center items-end gap-5 max-w-5xl mx-auto"
+      className="flex flex-col md:flex-row justify-center items-center gap-5 max-w-5xl mx-auto"
     >
       <div
         suppressHydrationWarning
-        className={`w-full md:w-1/4 relative h-64 mb-5 transition-all duration-1000 ease-out ${
+        className={`w-full md:w-1/4 relative h-96 transition-all duration-1000 ease-out ${
           mounted && isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
         }`}
         style={{ transitionDelay: '100ms' }}
@@ -72,7 +72,7 @@ export default function SessoesGallery() {
       </div>
       <div
         suppressHydrationWarning
-        className={`w-full md:w-1/5 relative h-72 mb-20 transition-all duration-1000 ease-out ${
+        className={`w-full md:w-1/5 relative h-96 transition-all duration-1000 ease-out ${
           mounted && isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
         }`}
         style={{ transitionDelay: '500ms' }}

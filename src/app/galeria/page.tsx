@@ -23,6 +23,10 @@ const galleryImages = [
   { src: '/gallery/crias-gallery-16.webp', alt: 'Grupo de crianças pequenas num abraço coletivo' },
   { src: '/gallery/crias-gallery-17.webp', alt: 'Crianças sentadas num tronco com movimento e energia' },
   { src: '/gallery/crias-gallery-18.webp', alt: 'Bebé e adulto a explorar galhos e paus na floresta' },
+  { src: '/gallery/crias-gallery-19.webp', alt: 'Criança a brincar na floresta' },
+  { src: '/gallery/crias-gallery-20.webp', alt: 'Crianças a explorar a natureza' },
+  { src: '/gallery/crias-gallery-21.webp', alt: 'Crianças a brincar na floresta' },
+  { src: '/gallery/crias-gallery-22.webp', alt: 'Atividades na floresta' },
 ];
 
 export default function Galeria() {

@@ -30,7 +30,7 @@ export default function Home() {
               volta.
             </p>
             <p>
-              A floresta convida a alinhar a nossa energia com a frequência da Terra. É nesse
+              A floresta convida a alinhar a nossa energia com a frequência da Terra. <br />É nesse
               alinhamento que nasce a verdadeira conexão - a que não precisa de palavras, apenas de
               presença.
             </p>
@@ -71,7 +71,7 @@ export default function Home() {
       </section>
 
       {/* "JUNTA-TE A NÓS" */}
-      <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[92vh] flex items-center justify-center overflow-hidden">
         {/* Big Background Image */}
         <Image
           src="/photos/holding-basket.jpg"
@@ -83,7 +83,7 @@ export default function Home() {
         />
 
         {/* Centered Container Box */}
-        <div className="relative z-10 bg-mossy-green text-light-beige p-10 md:p-16 max-w-[600px] mx-4 shadow-2xl">
+        <div className="relative z-10 bg-mossy-green text-light-beige p-10 md:p-12 max-w-[650px] mx-4 shadow-2xl">
           <h2 className="!text-light-beige text-4xl md:text-5xl mb-8 text-left">
             Junta-Te A Nós Na Floresta
           </h2>
@@ -132,7 +132,7 @@ export default function Home() {
             <div className="space-y-6 text-base leading-relaxed font-light">
               <p>
                 Este projeto nasceu de dois corações. Neles viviam a verdade, a alegria, a
-                esperança, a força e o amor. E quando esses corações se encontraram, o amor
+                esperança, a força e o amor. <br />E quando esses corações se encontraram, o amor
                 floresceu — em todas as pequenas e grandes coisas que iam fazendo, todos os dias.
               </p>
               <p>
@@ -159,7 +159,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 md:left-[30%]">
           <Image
-            src="/photos/home-bg-comunidade.jpg"
+            src="/photos/home-bg-comunidade.webp"
             alt="Kids hands in dirt"
             fill
             className="object-cover"

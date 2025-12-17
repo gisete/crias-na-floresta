@@ -50,13 +50,26 @@ export default function Footer() {
 
         {/* Footer Links */}
         <div className="text-[10px] text-[var(--color-light-beige)]/50 font-light uppercase tracking-wider border-t border-white/10 pt-8 flex flex-wrap justify-center gap-4">
-          <span>Parceiros</span>
+          <a
+            href="/legal/termos-e-condicoes"
+            className="hover:text-[var(--color-light-beige)] transition"
+          >
+            Termos e Condições
+          </a>
           <span className="hidden md:inline">|</span>
-          <span>Termos e Condições</span>
+          <a
+            href="/legal/politica-de-privacidade"
+            className="hover:text-[var(--color-light-beige)] transition"
+          >
+            Política de Privacidade
+          </a>
           <span className="hidden md:inline">|</span>
-          <span>Política de Privacidade</span>
-          <span className="hidden md:inline">|</span>
-          <span>Política de Cookies</span>
+          <a
+            href="/legal/politica-de-cookies"
+            className="hover:text-[var(--color-light-beige)] transition"
+          >
+            Política de Cookies
+          </a>
         </div>
       </div>
     </footer>

@@ -164,8 +164,8 @@ export default function AFloresta() {
         <div className="max-w-2xl mx-auto text-center mb-16">
           <h2 className="text-5xl md:text-6xl mb-8 text-fog-gray">Sessões</h2>
           <p className="text-base leading-relaxed text-smoke-gray">
-            As sessões Forest School da Crias na Floresta foram pensadas para que bebês, crianças e
-            cuidadores possam construir, juntos, uma relação regular com a natureza.
+            As sessões Forest School da Crias na Floresta foram pensadas para que Crias e cuidadores
+            possam construir juntos uma relação regular com a natureza.
           </p>
         </div>
 
@@ -239,8 +239,9 @@ export default function AFloresta() {
                   <ul className="space-y-2 opacity-90 list-disc pl-4 marker:text-white/40">
                     <li>Segunda-feira, Quarta-feira, Sábado e Domingo - 10:00h às 12:00h</li>
                     <li>
-                      Quarta-feira, Sábado e Domingo - 14:30h às 16:30h (horário de inverno) / 15h00
-                      às 17h00 (horário de verão)
+                      Quarta-feira, Sábado e Domingo - 14:30h às 16:30h (horário de inverno)
+                      <br />
+                      15h00 às 17h00 (horário de verão)
                     </li>
                   </ul>
                 </div>

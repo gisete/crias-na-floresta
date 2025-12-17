@@ -67,7 +67,7 @@ export default function QuemSomos() {
             </div>
             <div className="relative h-[400px] md:h-[550px] w-full">
               <Image
-                src="/photos/kids-jumping-adult.jpg"
+                src="/photos/guardioes-pedro.webp"
                 alt="Pedro e as crianças"
                 fill
                 className="object-cover rounded-sm shadow-sm"
