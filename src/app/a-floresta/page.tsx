@@ -15,7 +15,7 @@ export default function AFloresta() {
     <div>
       <Hero
         type="image"
-        imageSrc="/photos/hero-a-floresta.jpg"
+        imageSrc="/photos/hero-a-floresta2.webp"
         alt="A Floresta"
         variant="page"
         title="A Floresta"
@@ -102,9 +102,15 @@ export default function AFloresta() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             {/* Feature 1 */}
             <div className="flex flex-col gap-4">
-              <svg className="w-10 h-10 stroke-white fill-none stroke-[1.5]" viewBox="0 0 24 24">
-                <path d="M12 22c4.97 0 9-4.03 9-9c0-4.97-9-13-9-13S3 8.03 3 13c0 4.97 4.03 9 9 9z" />
-              </svg>
+              <div className="relative w-24 h-24">
+                <Image
+                  src="/icons/feature1.webp"
+                  alt="Escuta"
+                  fill
+                  className="object-contain"
+                  sizes="96px"
+                />
+              </div>
               <h4 className="text-md !text-light-beige uppercase tracking-wider">Escuta</h4>
               <p className="text-sm opacity-90">
                 Abrandar, respirar e olhar em volta. O que vês? O que ouves? O silêncio da floresta
@@ -116,10 +122,15 @@ export default function AFloresta() {
 
             {/* Feature 2 */}
             <div className="flex flex-col gap-4">
-              <svg className="w-10 h-10 stroke-white fill-none stroke-[1.5]" viewBox="0 0 24 24">
-                <path d="M12 3v19M5 10l7-7 7 7" />
-                <path d="M18 14a6 6 0 0 1-12 0" />
-              </svg>
+              <div className="relative w-24 h-24">
+                <Image
+                  src="/icons/feature2.webp"
+                  alt="Cuidar"
+                  fill
+                  className="object-contain"
+                  sizes="96px"
+                />
+              </div>
               <h4 className="text-md !text-light-beige uppercase tracking-wider">Cuidar</h4>
               <p className="text-sm opacity-90">
                 Viver em sintonia com a natureza é vital para nos sentirmos otimistas e saudáveis.
@@ -131,9 +142,15 @@ export default function AFloresta() {
 
             {/* Feature 3 */}
             <div className="flex flex-col gap-4">
-              <svg className="w-10 h-10 stroke-white fill-none stroke-[1.5]" viewBox="0 0 24 24">
-                <path d="M2 22l10-10 10 10M12 2L2 22" />
-              </svg>
+              <div className="relative w-24 h-24">
+                <Image
+                  src="/icons/feature3.webp"
+                  alt="Enraizar"
+                  fill
+                  className="object-contain"
+                  sizes="96px"
+                />
+              </div>
               <h4 className="text-md !text-light-beige uppercase tracking-wider">Enraizar</h4>
               <p className="text-sm opacity-90">
                 Temos muito a aprender com as árvores. A sua existência recorda-nos de que a vida
@@ -145,9 +162,15 @@ export default function AFloresta() {
 
             {/* Feature 4 */}
             <div className="flex flex-col gap-4">
-              <svg className="w-10 h-10 stroke-white fill-none stroke-[1.5]" viewBox="0 0 24 24">
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
+              <div className="relative w-24 h-24">
+                <Image
+                  src="/icons/feature4.webp"
+                  alt="Autonomia"
+                  fill
+                  className="object-contain"
+                  sizes="96px"
+                />
+              </div>
               <h4 className="text-md !text-light-beige uppercase tracking-wider">Autonomia</h4>
               <p className="text-sm opacity-90">
                 Podemos estender as nossas próprias raízes e crescer explorando o mundo à nossa

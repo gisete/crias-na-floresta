@@ -10,7 +10,7 @@
   /* Color Palette */
   --color-light-beige: #f3f0e8;
   --color-smoke-gray: #2b2928;
-  --color-mossy-green: #4e5040;
+  --color-mossy-green: #4c4c40;
   --color-mossy-green-light: #6b7a65;
   --color-mossy-green-dark: #3a4138;
   --color-fog-gray: #887a72;
@@ -35,7 +35,12 @@ body {
   letter-spacing: 0.4px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-cormorant);
   color: var(--color-fog-gray);
 }
