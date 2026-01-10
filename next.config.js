@@ -1,5 +1,4 @@
-// Payload integration commented out until database is configured
-// const { withPayload } = require('@payloadcms/next/withPayload');
+const { withPayload } = require('@payloadcms/next/withPayload')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,9 +9,13 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: '*.supabase.co',
+      },
     ],
   },
+  serverExternalPackages: ['drizzle-orm', 'drizzle-kit', '@payloadcms/db-postgres', 'payload'],
 }
 
-// module.exports = withPayload(nextConfig)
-module.exports = nextConfig
+module.exports = withPayload(nextConfig)

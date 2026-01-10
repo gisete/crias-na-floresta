@@ -7,7 +7,14 @@
       "Bash(tree:*)",
       "Bash(npm uninstall:*)",
       "WebSearch",
-      "Bash(npx fix-react2shell-next:*)"
+      "Bash(npx fix-react2shell-next:*)",
+      "Bash(cat:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run dev:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(openssl rand:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
