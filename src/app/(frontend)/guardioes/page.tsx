@@ -65,42 +65,30 @@ export default async function Guardioes() {
     manifestoImage: '/photos/kids-looking.jpg',
     manifestoContentPart1: `
       <p>
-        A sociedade urbana, hoje em dia, opta cada vez mais por formas de contacto simbólico
-        com o ambiente natural, num processo de extinção da experiência que parece correr em
-        paralelo com a própria perda global de biodiversidade.
+        Vivemos numa sociedade que se afasta progressivamente do contacto real com o mundo natural, substituindo a experiência viva por representações simbólicas. A educação ambiental, muitas vezes, assenta num modelo teórico e racional que transforma a consciência ecológica num conjunto de objetivos a cumprir.
       </p>
 
       <p>
-        O contacto direto com a Natureza na primeira infância contribui para o
-        desenvolvimento harmonioso do potencial psicocognitivo e constitui uma via
-        estrutural para a formação de uma sensibilidade atenta à beleza do mundo. Para a
-        criança, é menos importante saber do que sentir: os anos da primeira infância são
-        aqueles em que se prepara o solo.
+        Ao mesmo tempo, assistimos a uma habituação crescente a ambientes ecologicamente degradados - uma verdadeira amnésia geracional ambiental, em que cada geração passa a aceitar como normal um mundo cada vez mais empobrecido. Para muitas crianças, a paisagem vista através da janela do carro ou dos ecrãs tornou-se o contacto mais próximo com o mundo natural.
+      </p>
+
+      <p>
+        Este processo de "extinção da experiência" corre em paralelo com a própria perda global de biodiversidade e com a perda de vínculo, de sensibilidade e de pertença.
       </p>
     `,
     manifestoQuote:
-      'Há cada vez menos Natureza disponível — e as crianças estão, também elas, cada vez mais longe dela.',
+      'O maravilhamento pela Natureza é inato, mas precisa de proximidade, tempo e repetição para florescer. A relação com o mundo natural deve ser uma extensão da infância.',
     manifestoContentPart2: `
       <p>
-        Uma vez despertas as emoções — o sentido do belo, o entusiasmo, a empatia, a
-        piedade, a admiração e o amor — nasce o desejo de conhecimento. Para que esta
-        empatia floresça, os adultos de referência precisam também de a viver: com os pés na
-        terra, o coração aberto e o olhar atento. Quando demonstram respeito e encanto pela
-        Natureza, oferecem à criança a possibilidade de aprender, de cultivar o cuidado e a
-        gratidão.
+        Mas esta ligação não se ensina por discursos: vive-se. Por isso, os adultos de referência caminham ao lado das crianças, com os pés na terra, o coração aberto e o olhar atento. Acreditamos no poder do exemplo vivido e partilhado. É ele que constrói a ponte para uma relação profunda e duradoura com o mundo natural. Assim, a Natureza deixa de ser apenas cenário e transforma-se em casa.
       </p>
 
       <p>
-        O exemplo, vivido e partilhado, é a ponte que alimenta esta ligação profunda. Assim,
-        a Natureza deixa de ser apenas um cenário: torna-se extensão da infância, casa,
-        espelho e companheira de crescimento.
+        Esta relação primordial molda e amplia todas as dimensões do ser humano: o sentir, o pensar, o comunicar, o relacionar-se e o imaginar.
       </p>
 
       <p>
-        O contacto direto com o meio natural afeta a criança de um modo que nenhuma
-        experiência simbólica pode substituir. A riqueza dessa relação primordial modela e
-        amplifica toda a multidimensionalidade humana: o sentir, o pensar, o comunicar,
-        entre tantos outros aspetos.
+        A Natureza recorda-nos quem somos e quem nos trouxe até aqui. Mostra-nos que somos feitos de raízes e que pertencer é respeitar e cuidar.
       </p>
     `,
     differenceTitle: 'A Nossa Diferença',

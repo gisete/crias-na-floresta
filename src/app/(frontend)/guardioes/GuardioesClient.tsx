@@ -116,11 +116,12 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
       {/* MANIFESTO SECTION */}
       <section className="py-32 bg-mossy-green text-light-beige">
         <Container className="max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-16 relative items-center">
+          <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-16 relative items-start">
+            {/* Vertical Line Separator - positioned relative to grid container */}
+            <div className="hidden md:block absolute left-[calc(40%-0.5rem)] top-1/2 -translate-y-1/2 h-[80%] w-px bg-light-beige/30"></div>
+
             {/* Left Column (Image & Title) */}
             <div className="flex flex-col relative md:pr-12">
-              {/* Vertical Line Separator */}
-              <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-[80%] w-px bg-light-beige/30"></div>
 
               <h2
                 className="text-5xl md:text-7xl leading-[0.9] mb-12 !text-light-beige"
@@ -148,8 +149,8 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
             </div>
 
             {/* Right Column - Text */}
-            <div className="space-y-6 font-light text-base leading-relaxed opacity-90 pl-0 md:pl-4">
-              <div dangerouslySetInnerHTML={{ __html: pageContent.manifestoContentPart1 }} />
+            <div className="font-light text-base leading-relaxed opacity-90 pl-0 md:pl-4">
+              <div className="space-y-8" dangerouslySetInnerHTML={{ __html: pageContent.manifestoContentPart1 }} />
 
               {pageContent.manifestoQuote && (
                 <blockquote className="font-cormorant text-2xl md:text-3xl italic my-12 leading-tight text-white opacity-100">
@@ -157,7 +158,7 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
                 </blockquote>
               )}
 
-              <div dangerouslySetInnerHTML={{ __html: pageContent.manifestoContentPart2 }} />
+              <div className="space-y-8" dangerouslySetInnerHTML={{ __html: pageContent.manifestoContentPart2 }} />
             </div>
           </div>
         </Container>
