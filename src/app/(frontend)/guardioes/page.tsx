@@ -63,7 +63,7 @@ export default async function Guardioes() {
     </p>`,
     manifestoTitle: 'Nosso<br />Manifesto',
     manifestoImage: '/photos/kids-looking.jpg',
-    manifestoContent: `
+    manifestoContentPart1: `
       <p>
         A sociedade urbana, hoje em dia, opta cada vez mais por formas de contacto simbólico
         com o ambiente natural, num processo de extinção da experiência que parece correr em
@@ -77,7 +77,10 @@ export default async function Guardioes() {
         criança, é menos importante saber do que sentir: os anos da primeira infância são
         aqueles em que se prepara o solo.
       </p>
-
+    `,
+    manifestoQuote:
+      'Há cada vez menos Natureza disponível — e as crianças estão, também elas, cada vez mais longe dela.',
+    manifestoContentPart2: `
       <p>
         Uma vez despertas as emoções — o sentido do belo, o entusiasmo, a empatia, a
         piedade, a admiração e o amor — nasce o desejo de conhecimento. Para que esta
@@ -100,7 +103,6 @@ export default async function Guardioes() {
         entre tantos outros aspetos.
       </p>
     `,
-    manifestoQuote: 'Há cada vez menos Natureza disponível — e as crianças estão, também elas, cada vez mais longe dela.',
     differenceTitle: 'A Nossa Diferença',
     differenceContent: `
       <p>
@@ -128,7 +130,7 @@ export default async function Guardioes() {
         É esta forma de estar que diferencia o Crias na Floresta.
       </p>
     `,
-    differenceImage: '/photos/holding-basket.jpg',
+    differenceImage: '/photos/guardioes-diferenca.webp',
     communityTitle: 'A Nossa Comunidade',
     communityImage: '/photos/group-gathering.jpg',
   };
@@ -143,14 +145,27 @@ export default async function Guardioes() {
     martaBio: richTextToHtml((guardioesPage as any)?.martaBio) || defaultContent.martaBio,
     pedroBio: richTextToHtml((guardioesPage as any)?.pedroBio) || defaultContent.pedroBio,
     manifestoTitle: (guardioesPage as any)?.manifestoTitle || defaultContent.manifestoTitle,
-    manifestoImage: getImageUrl((guardioesPage as any)?.manifestoImage, defaultContent.manifestoImage),
-    manifestoContent: richTextToHtml((guardioesPage as any)?.manifestoContent) || defaultContent.manifestoContent,
+    manifestoImage: getImageUrl(
+      (guardioesPage as any)?.manifestoImage,
+      defaultContent.manifestoImage
+    ),
+    manifestoContentPart1:
+      richTextToHtml((guardioesPage as any)?.manifestoContentPart1) || defaultContent.manifestoContentPart1,
     manifestoQuote: (guardioesPage as any)?.manifestoQuote || defaultContent.manifestoQuote,
+    manifestoContentPart2:
+      richTextToHtml((guardioesPage as any)?.manifestoContentPart2) || defaultContent.manifestoContentPart2,
     differenceTitle: (guardioesPage as any)?.differenceTitle || defaultContent.differenceTitle,
-    differenceContent: richTextToHtml((guardioesPage as any)?.differenceContent) || defaultContent.differenceContent,
-    differenceImage: getImageUrl((guardioesPage as any)?.differenceImage, defaultContent.differenceImage),
+    differenceContent:
+      richTextToHtml((guardioesPage as any)?.differenceContent) || defaultContent.differenceContent,
+    differenceImage: getImageUrl(
+      (guardioesPage as any)?.differenceImage,
+      defaultContent.differenceImage
+    ),
     communityTitle: (guardioesPage as any)?.communityTitle || defaultContent.communityTitle,
-    communityImage: getImageUrl((guardioesPage as any)?.communityImage, defaultContent.communityImage),
+    communityImage: getImageUrl(
+      (guardioesPage as any)?.communityImage,
+      defaultContent.communityImage
+    ),
   };
 
   return <GuardioesClient pageContent={pageContent} />;

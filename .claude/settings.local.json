@@ -20,7 +20,8 @@
       "Bash(pkill:*)",
       "Bash(npm run payload:*)",
       "Bash(grep:*)",
-      "Bash(psql:*)"
+      "Bash(psql:*)",
+      "Bash(git log:*)"
     ],
     "deny": [],
     "ask": []

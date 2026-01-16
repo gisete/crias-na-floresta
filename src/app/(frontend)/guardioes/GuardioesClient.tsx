@@ -16,8 +16,9 @@ interface GuardioesClientProps {
     pedroBio: string;
     manifestoTitle: string;
     manifestoImage: string;
-    manifestoContent: string;
+    manifestoContentPart1: string;
     manifestoQuote: string;
+    manifestoContentPart2: string;
     differenceTitle: string;
     differenceContent: string;
     differenceImage: string;
@@ -148,13 +149,15 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
 
             {/* Right Column - Text */}
             <div className="space-y-6 font-light text-base leading-relaxed opacity-90 pl-0 md:pl-4">
-              <div dangerouslySetInnerHTML={{ __html: pageContent.manifestoContent }} />
+              <div dangerouslySetInnerHTML={{ __html: pageContent.manifestoContentPart1 }} />
 
               {pageContent.manifestoQuote && (
                 <blockquote className="font-cormorant text-2xl md:text-3xl italic my-12 leading-tight text-white opacity-100">
                   {pageContent.manifestoQuote}
                 </blockquote>
               )}
+
+              <div dangerouslySetInnerHTML={{ __html: pageContent.manifestoContentPart2 }} />
             </div>
           </div>
         </Container>
