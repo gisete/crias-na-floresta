@@ -4,32 +4,24 @@ import { useState } from 'react';
 import Hero from '@/components/shared/Hero';
 import Image from 'next/image';
 
-const galleryImages = [
-  { src: '/gallery/crias-gallery-1.webp', alt: 'Criança a baloiçar numa corda na floresta' },
-  { src: '/gallery/crias-gallery-2.webp', alt: 'Criança com expressão de surpresa a tapar a boca' },
-  { src: '/gallery/crias-gallery-3.webp', alt: 'Criança a olhar para livro infantil "Vamos à caça do urso"' },
-  { src: '/gallery/crias-gallery-4.webp', alt: 'Família e crianças sentadas numa estrutura de madeira na floresta' },
-  { src: '/gallery/crias-gallery-5.webp', alt: 'Criança a brincar com carrinho de madeira e laranjas na floresta' },
-  { src: '/gallery/crias-gallery-6.webp', alt: 'Bebé com mochila a preto e branco' },
-  { src: '/gallery/crias-gallery-7.webp', alt: 'Criança descalça a brincar com utensílios de cozinha de madeira' },
-  { src: '/gallery/crias-gallery-8.webp', alt: 'Criança deitada nas folhas de outono' },
-  { src: '/gallery/crias-gallery-9.webp', alt: 'Duas crianças de costas a olhar para baloiço de madeira' },
-  { src: '/gallery/crias-gallery-10.webp', alt: 'Criança envolta em manta com palavras sobre sonhar, viver, brincar e liberdade' },
-  { src: '/gallery/crias-gallery-11.webp', alt: 'Pés de criança sobre tábua de madeira com folhas de outono flutuando na água' },
-  { src: '/gallery/crias-gallery-12.webp', alt: 'Criança a escalar estrutura de madeira vista de cima' },
-  { src: '/gallery/crias-gallery-13.webp', alt: 'Criança a bater panela com colher de pau' },
-  { src: '/gallery/crias-gallery-14.webp', alt: 'Educadora e bebé sentados numa mesa de madeira ao pôr do sol' },
-  { src: '/gallery/crias-gallery-15.webp', alt: 'Criança a explorar flores e sementes na natureza' },
-  { src: '/gallery/crias-gallery-16.webp', alt: 'Grupo de crianças pequenas num abraço coletivo' },
-  { src: '/gallery/crias-gallery-17.webp', alt: 'Crianças sentadas num tronco com movimento e energia' },
-  { src: '/gallery/crias-gallery-18.webp', alt: 'Bebé e adulto a explorar galhos e paus na floresta' },
-  { src: '/gallery/crias-gallery-19.webp', alt: 'Criança a brincar na floresta' },
-  { src: '/gallery/crias-gallery-20.webp', alt: 'Crianças a explorar a natureza' },
-  { src: '/gallery/crias-gallery-21.webp', alt: 'Crianças a brincar na floresta' },
-  { src: '/gallery/crias-gallery-22.webp', alt: 'Atividades na floresta' },
-];
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
 
-export default function Galeria() {
+interface PageContent {
+  title: string;
+  subtitle: string;
+  eyebrow: string;
+  heroImage: string;
+}
+
+interface GalleryClientProps {
+  images: GalleryImage[];
+  pageContent: PageContent;
+}
+
+export default function GalleryClient({ images, pageContent }: GalleryClientProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -43,11 +35,11 @@ export default function Galeria() {
   };
 
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % galleryImages.length);
+    setCurrentImage((prev) => (prev + 1) % images.length);
   };
 
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   };
 
   // Handle keyboard navigation
@@ -61,7 +53,7 @@ export default function Galeria() {
     <div>
       <Hero
         type="image"
-        imageSrc="/photos/boy-curious.jpg"
+        imageSrc={pageContent.heroImage}
         alt="Galeria"
         variant="page"
         title="Galeria"
@@ -70,19 +62,23 @@ export default function Galeria() {
       {/* Gallery Header */}
       <section className="py-32 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm uppercase tracking-widest text-fog-gray mb-4">
-            Memórias da Natureza
-          </p>
+          {pageContent.eyebrow && (
+            <p className="text-sm uppercase tracking-widest text-fog-gray mb-4">
+              {pageContent.eyebrow}
+            </p>
+          )}
           <div className="w-16 h-px bg-fog-gray mx-auto mb-8 opacity-30"></div>
-          <h1 className="text-5xl md:text-6xl mb-6 font-cormorant">A Nossa Galeria</h1>
-          <p className="text-sm italic text-fog-gray">"Onde a curiosidade encontra a liberdade."</p>
+          <h1 className="text-5xl md:text-6xl mb-6 font-cormorant">{pageContent.title}</h1>
+          {pageContent.subtitle && (
+            <p className="text-sm italic text-fog-gray">"{pageContent.subtitle}"</p>
+          )}
         </div>
       </section>
 
       {/* Masonry Gallery Grid */}
       <section className="pb-32 px-6">
         <div className="max-w-[1200px] mx-auto columns-1 md:columns-2 lg:columns-3 gap-8">
-          {galleryImages.map((image, index) => (
+          {images.map((image, index) => (
             <div
               key={index}
               className="break-inside-avoid mb-8 relative cursor-pointer group transition-transform duration-400 hover:-translate-y-2"
@@ -154,8 +150,8 @@ export default function Galeria() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={galleryImages[currentImage].src}
-              alt={galleryImages[currentImage].alt}
+              src={images[currentImage].src}
+              alt={images[currentImage].alt}
               fill
               className="object-contain"
               sizes="100vw"
@@ -177,7 +173,7 @@ export default function Galeria() {
 
           {/* Image Counter */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-sm">
-            {currentImage + 1} / {galleryImages.length}
+            {currentImage + 1} / {images.length}
           </div>
         </div>
       )}

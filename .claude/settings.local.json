@@ -14,7 +14,12 @@
       "Bash(lsof:*)",
       "Bash(xargs kill:*)",
       "Bash(openssl rand:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(ls:*)",
+      "Bash(npm show:*)",
+      "Bash(pkill:*)",
+      "Bash(npm run payload:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

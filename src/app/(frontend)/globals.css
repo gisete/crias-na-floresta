@@ -1,8 +1,8 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@source "../**/*.{js,ts,jsx,tsx,mdx}";
-
-@theme {
+:root {
   /* Fonts */
   --font-cormorant: 'Cormorant Garamond', serif;
   --font-sans: 'Libre Franklin', sans-serif;
@@ -15,9 +15,8 @@
   --color-mossy-green-dark: #3a4138;
   --color-fog-gray: #887a72;
   --color-tree: #8fa878;
-}
 
-:root {
+  /* Background & Foreground */
   --background: #fdfaf6;
   --foreground: #2b2928;
   --font-serif: var(--font-cormorant);
