@@ -13,7 +13,8 @@ export default async function TermosECondicoes() {
   const payload = await getPayload({ config });
 
   const legalPages = await payload.findGlobal({
-    slug: 'legal-pages' as any,
+    // @ts-ignore - Global types not yet generated
+    slug: 'legal-pages',
   });
 
   const title = (legalPages as any)?.termosTitle || 'Termos e Condições';

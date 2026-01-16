@@ -7,7 +7,8 @@ export default async function Galeria() {
 
   // Fetch gallery page settings and images
   const galleryPage = await payload.findGlobal({
-    slug: 'gallery-page' as any,
+    // @ts-ignore - Global types not yet generated
+    slug: 'gallery-page',
   });
 
   // Transform the images data

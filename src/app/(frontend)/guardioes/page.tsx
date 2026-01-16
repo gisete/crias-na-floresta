@@ -28,7 +28,8 @@ export default async function Guardioes() {
 
   // Fetch guardioes page settings
   const guardioesPage = await payload.findGlobal({
-    slug: 'guardioes-page' as any,
+    // @ts-ignore - Global types not yet generated
+    slug: 'guardioes-page',
   });
 
   // Default content for fallbacks

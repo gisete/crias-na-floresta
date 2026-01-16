@@ -77,7 +77,8 @@ export default async function AFloresta() {
 
   // Fetch a-floresta page settings
   const florestaPage = await payload.findGlobal({
-    slug: 'a-floresta-page' as any,
+    // @ts-ignore - Global types not yet generated
+    slug: 'a-floresta-page',
   });
 
   // Default content

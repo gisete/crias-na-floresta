@@ -19,7 +19,8 @@
       "Bash(npm show:*)",
       "Bash(pkill:*)",
       "Bash(npm run payload:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(psql:*)"
     ],
     "deny": [],
     "ask": []

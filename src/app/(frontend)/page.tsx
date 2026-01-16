@@ -59,7 +59,8 @@ export default async function Home() {
 
   // Fetch home page settings
   const homePage = await payload.findGlobal({
-    slug: 'home-page' as any,
+    // @ts-ignore - Global types not yet generated
+    slug: 'home-page',
   });
 
   // Debug: log what we got from Payload
