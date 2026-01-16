@@ -2,6 +2,8 @@ import { getPayload } from 'payload';
 import config from '@payload-config';
 import GalleryClient from './GalleryClient';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Galeria() {
   const payload = await getPayload({ config });
 

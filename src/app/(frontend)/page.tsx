@@ -2,6 +2,8 @@ import { getPayload } from 'payload';
 import config from '@payload-config';
 import HomeClient from './HomeClient';
 
+export const dynamic = 'force-dynamic';
+
 // Helper function to safely extract image URL
 const getImageUrl = (image: any, fallback: string): string => {
   if (typeof image === 'object' && image?.url) {

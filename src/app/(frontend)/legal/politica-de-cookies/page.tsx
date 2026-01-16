@@ -4,6 +4,8 @@ import LegalPageLayout from '@/components/shared/LegalPageLayout';
 import { richTextToHtml } from '@/lib/richTextToHtml';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Crias Na Floresta | Política de Cookies',
   description: 'Política de Cookies da Crias na Floresta',

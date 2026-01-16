@@ -3,6 +3,8 @@ import config from '@payload-config';
 import AFlorestaClient from './AFlorestaClient';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Crias Na Floresta | A Floresta',
   description:
