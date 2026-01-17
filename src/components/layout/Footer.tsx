@@ -9,13 +9,15 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto text-center text-[var(--color-light-beige)]">
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <Image
-            src="/images/crias-na-floresta-logo.png"
-            alt="Crias na Floresta"
-            width={200}
-            height={64}
-            className="h-24 md:h-28 w-auto object-contain"
-          />
+          <a href="/">
+            <Image
+              src="/images/crias-na-floresta-logo.png"
+              alt="Crias na Floresta"
+              width={200}
+              height={64}
+              className="h-24 md:h-28 w-auto object-contain cursor-pointer hover:opacity-80 transition"
+            />
+          </a>
         </div>
 
         {/* Email */}
