@@ -71,14 +71,14 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
       />
 
       {/* QUEM SOMOS SECTION */}
-      <section className="py-32 px-6 bg-light-beige text-smoke-gray">
+      <section className="pt-16 pb-16 md:py-32 px-6 bg-light-beige text-smoke-gray">
         <Container>
-          <h2 className="text-5xl md:text-6xl text-center mb-16 text-fog-gray max-w-md mx-auto">
+          <h2 className="text-5xl md:text-6xl text-center mb-10 md:mb-16 text-fog-gray max-w-md mx-auto">
             {pageContent.aboutTitle}
           </h2>
 
           {/* Dual Image Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 md:mb-16 max-w-4xl mx-auto">
             <div className="relative h-[400px] md:h-[550px] w-full">
               <Image
                 src={pageContent.martaImage}
@@ -114,9 +114,9 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
       </section>
 
       {/* MANIFESTO SECTION */}
-      <section className="py-32 bg-mossy-green text-light-beige">
+      <section className="py-16 md:py-32 bg-mossy-green text-light-beige">
         <Container className="max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-16 relative items-start">
+          <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-16 relative items-start">
             {/* Vertical Line Separator - positioned relative to grid container */}
             <div className="hidden md:block absolute left-[calc(40%-0.5rem)] top-1/2 -translate-y-1/2 h-[80%] w-px bg-light-beige/30"></div>
 
@@ -124,7 +124,7 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
             <div className="flex flex-col relative md:pr-12">
 
               <h2
-                className="text-5xl md:text-7xl leading-[0.9] mb-12 !text-light-beige"
+                className="text-5xl md:text-7xl leading-[0.9] mb-8 md:mb-12 !text-light-beige"
                 dangerouslySetInnerHTML={{ __html: pageContent.manifestoTitle }}
               />
 
@@ -153,7 +153,7 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
               <div className="space-y-8" dangerouslySetInnerHTML={{ __html: pageContent.manifestoContentPart1 }} />
 
               {pageContent.manifestoQuote && (
-                <blockquote className="font-cormorant text-2xl md:text-3xl italic my-12 leading-tight text-white opacity-100">
+                <blockquote className="font-cormorant text-2xl md:text-3xl italic my-8 md:my-12 leading-tight text-white opacity-100">
                   {pageContent.manifestoQuote}
                 </blockquote>
               )}
@@ -165,13 +165,13 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
       </section>
 
       {/* A NOSSA DIFERENÇA SECTION */}
-      <section className="pt-32 bg-light-beige">
+      <section className="pt-16 md:pt-32 bg-light-beige">
         <Container className="max-w-6xl">
-          <h2 className="text-5xl md:text-6xl text-center mb-16 text-fog-gray">
+          <h2 className="text-5xl md:text-6xl text-center mb-10 md:mb-16 text-fog-gray">
             {pageContent.differenceTitle}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             {/* Text Content */}
             <div
               className="space-y-6 font-light text-base leading-relaxed text-smoke-gray"
@@ -193,12 +193,12 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
       </section>
 
       {/* A NOSSA COMUNIDADE SECTION */}
-      <section className="py-32 pb-38 bg-light-beige">
+      <section className="pt-16 pb-16 md:py-32 md:pb-38 bg-light-beige">
         <Container>
-          <h2 className="text-5xl md:text-6xl text-center mb-12 text-fog-gray">
+          <h2 className="text-5xl md:text-6xl text-center mb-8 md:mb-12 text-fog-gray">
             {pageContent.communityTitle}
           </h2>
-          <div className="relative w-full h-[400px] md:h-[600px] max-w-5xl mx-auto">
+          <div className="relative w-full h-[300px] md:h-[600px] max-w-5xl mx-auto">
             <Image
               src={pageContent.communityImage}
               alt="Comunidade Crias na Floresta"

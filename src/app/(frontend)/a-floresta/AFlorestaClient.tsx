@@ -51,13 +51,13 @@ export default function AFlorestaClient({ pageContent }: AFlorestaClientProps) {
       />
 
       {/* FOREST SCHOOL - O QUE É */}
-      <section className="py-32 px-6">
+      <section className="pt-16 pb-16 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-5xl md:text-6xl text-center mb-20 text-fog-gray">
+          <h1 className="text-5xl md:text-6xl text-center mb-12 md:mb-20 text-fog-gray">
             {pageContent.forestSchoolTitle}
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-16 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-10 md:gap-16 items-start">
             {/* Images Container */}
             <div className="flex gap-6 items-start">
               {/* Left Column: 2 Stacked Images */}
@@ -115,15 +115,15 @@ export default function AFlorestaClient({ pageContent }: AFlorestaClientProps) {
       </section>
 
       {/* FEATURES - APRENDER COM A FLORESTA */}
-      <section className="bg-mossy-green text-light-beige py-32">
+      <section className="bg-mossy-green text-light-beige py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="!text-light-beige text-4xl md:text-5xl text-center mb-16">
+          <h2 className="!text-light-beige text-4xl md:text-5xl text-center mb-10 md:mb-16">
             {pageContent.sentirTitle}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
             {pageContent.features.map((feature, index) => (
-              <div key={index} className="flex flex-col gap-4">
+              <div key={index} className="flex flex-col gap-4 items-center md:items-start">
                 <div className="relative w-24 h-24">
                   <Image
                     src={feature.icon}
@@ -133,7 +133,7 @@ export default function AFlorestaClient({ pageContent }: AFlorestaClientProps) {
                     sizes="96px"
                   />
                 </div>
-                <h4 className="text-lg !text-light-beige uppercase tracking-wider">
+                <h4 className="text-lg !text-light-beige uppercase tracking-wider text-center md:text-left">
                   {feature.title}
                 </h4>
                 <ul className="text-sm mt-2 opacity-90 space-y-4 list-disc pl-4 marker:text-light-beige/40">
@@ -148,9 +148,9 @@ export default function AFlorestaClient({ pageContent }: AFlorestaClientProps) {
       </section>
 
       {/* SESSÕES */}
-      <section className="py-32 px-6 bg-light-beige">
-        <div className="max-w-2xl mx-auto text-center mb-16">
-          <h2 className="text-5xl md:text-6xl mb-8 text-fog-gray">{pageContent.sessoesTitle}</h2>
+      <section className="pt-16 pb-16 md:py-32 px-6 bg-light-beige">
+        <div className="max-w-2xl mx-auto text-center mb-10 md:mb-16">
+          <h2 className="text-5xl md:text-6xl mb-6 md:mb-8 text-fog-gray">{pageContent.sessoesTitle}</h2>
           <p className="text-base leading-relaxed text-smoke-gray">{pageContent.sessoesIntro}</p>
         </div>
 
@@ -158,12 +158,12 @@ export default function AFlorestaClient({ pageContent }: AFlorestaClientProps) {
       </section>
 
       {/* COMO FUNCIONA */}
-      <section className="pb-32 pt-8 bg-light-beige px-6">
+      <section className="pb-16 pt-2 md:pb-32 md:pt-8 bg-light-beige px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-12 items-start">
             {/* Left Column: Story Text (No Background) */}
             <div className="space-y-6">
-              <h3 className="text-3xl md:text-4xl pt-12 text-fog-gray font-cormorant leading-[1.1] mb-6">
+              <h3 className="text-3xl md:text-4xl pt-6 md:pt-12 text-fog-gray font-cormorant leading-[1.1] mb-6">
                 {pageContent.comoFuncionaStoryTitle}
               </h3>
 
@@ -172,7 +172,7 @@ export default function AFlorestaClient({ pageContent }: AFlorestaClientProps) {
                 dangerouslySetInnerHTML={{ __html: pageContent.comoFuncionaStoryContent }}
               />
 
-              <div className="mt-8">
+              <div className="mt-8 mb-12 md:mb-0">
                 <a
                   href={pageContent.inscricaoLink}
                   target="_blank"
@@ -258,12 +258,12 @@ export default function AFlorestaClient({ pageContent }: AFlorestaClientProps) {
       </section>
 
       {/* VIDEO SECTION */}
-      <section className="pb-32 px-6 bg-light-beige">
+      <section className="pb-16 md:pb-32 px-6 bg-light-beige">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-6xl text-center mb-12 text-fog-gray">
+          <h2 className="text-5xl md:text-6xl text-center mb-8 md:mb-12 text-fog-gray">
             {pageContent.videoTitle}
           </h2>
-          <div className="relative w-full h-[600px] bg-smoke-gray shadow-2xl">
+          <div className="relative w-full h-[300px] md:h-[600px] bg-smoke-gray shadow-2xl">
             <iframe
               className="absolute inset-0 w-full h-full"
               src={pageContent.videoUrl}

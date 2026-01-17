@@ -60,15 +60,15 @@ export default function GalleryClient({ images, pageContent }: GalleryClientProp
       />
 
       {/* Gallery Header */}
-      <section className="py-32 px-6">
+      <section className="pt-16 pb-12 md:py-32 px-6">
         <div className="max-w-3xl mx-auto text-center">
           {pageContent.eyebrow && (
             <p className="text-sm uppercase tracking-widest text-fog-gray mb-4">
               {pageContent.eyebrow}
             </p>
           )}
-          <div className="w-16 h-px bg-fog-gray mx-auto mb-8 opacity-30"></div>
-          <h1 className="text-5xl md:text-6xl mb-6 font-cormorant">{pageContent.title}</h1>
+          <div className="w-16 h-px bg-fog-gray mx-auto mb-6 md:mb-8 opacity-30"></div>
+          <h1 className="text-5xl md:text-6xl mb-4 md:mb-6 font-cormorant">{pageContent.title}</h1>
           {pageContent.subtitle && (
             <p className="text-sm italic text-fog-gray">"{pageContent.subtitle}"</p>
           )}
@@ -76,7 +76,7 @@ export default function GalleryClient({ images, pageContent }: GalleryClientProp
       </section>
 
       {/* Masonry Gallery Grid */}
-      <section className="pb-32 px-6">
+      <section className="pb-16 md:pb-32 px-6">
         <div className="max-w-[1200px] mx-auto columns-1 md:columns-2 lg:columns-3 gap-8">
           {images.map((image, index) => (
             <div

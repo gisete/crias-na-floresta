@@ -24,7 +24,7 @@ export default function Navigation() {
   return (
     <nav className="text-white text-sm font-medium tracking-widest uppercase flex items-center justify-between w-full">
       {/* Logo - Always reserve space, but only show on subpages */}
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 pl-6 md:pl-0">
         {!isHomepage ? (
           <Link href="/">
             <Image
@@ -32,12 +32,12 @@ export default function Navigation() {
               alt="Crias na Floresta"
               width={300}
               height={96}
-              className="h-20 md:h-24 w-auto object-contain drop-shadow-2xl cursor-pointer"
+              className="h-28 md:h-24 w-auto object-contain drop-shadow-2xl cursor-pointer"
               priority
             />
           </Link>
         ) : (
-          <div className="h-20 md:h-24" />
+          <div className="h-28 md:h-24" />
         )}
       </div>
 
@@ -74,7 +74,7 @@ export default function Navigation() {
 
       {/* Mobile Menu Button */}
       <div
-        className="md:hidden text-2xl cursor-pointer text-white"
+        className="md:hidden text-2xl cursor-pointer text-white pr-6"
         onClick={() => setIsOpen(!isOpen)}
       >
         <i className="fa-solid fa-bars"></i>

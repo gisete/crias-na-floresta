@@ -14,7 +14,7 @@ export default function Footer() {
             alt="Crias na Floresta"
             width={200}
             height={64}
-            className="h-34 w-auto object-contain"
+            className="h-24 md:h-28 w-auto object-contain"
           />
         </div>
 

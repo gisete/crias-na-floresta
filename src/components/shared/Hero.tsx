@@ -121,7 +121,7 @@ export default function Hero({
               alt="Crias na Floresta"
               width={500}
               height={500}
-              className="w-80 md:w-96 lg:w-[500px] h-auto object-contain drop-shadow-2xl"
+              className="w-64 md:w-80 lg:w-96 h-auto object-contain drop-shadow-2xl"
               priority
             />
           )}
@@ -205,7 +205,7 @@ export default function Hero({
       {/* Centered Title */}
       {title && (
         <div className="absolute inset-0 flex flex-col justify-center items-center z-10 text-light-beige px-6">
-          <h1 className="text-5xl md:text-8xl !text-light-beige font-thin text-center drop-shadow-2xl max-w-2xl">
+          <h1 className="text-6xl md:text-8xl !text-light-beige font-thin text-center drop-shadow-2xl max-w-2xl">
             {title}
           </h1>
         </div>
