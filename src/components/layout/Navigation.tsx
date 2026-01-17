@@ -32,12 +32,12 @@ export default function Navigation() {
               alt="Crias na Floresta"
               width={300}
               height={96}
-              className="h-28 md:h-24 w-auto object-contain drop-shadow-2xl cursor-pointer"
+              className="h-28 md:h-32 w-auto object-contain drop-shadow-2xl cursor-pointer"
               priority
             />
           </Link>
         ) : (
-          <div className="h-28 md:h-24" />
+          <div className="h-28 md:h-32" />
         )}
       </div>
 
