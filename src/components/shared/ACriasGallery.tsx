@@ -72,7 +72,7 @@ export default function ACriasGallery() {
       </div>
       <div
         suppressHydrationWarning
-        className={`w-full md:w-1/5 relative h-96 transition-all duration-1000 ease-out ${
+        className={`w-full md:w-1/4 relative h-96 transition-all duration-1000 ease-out ${
           mounted && isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
         }`}
         style={{ transitionDelay: '500ms' }}
@@ -82,7 +82,7 @@ export default function ACriasGallery() {
           alt="Child in forest"
           fill
           className="object-cover shadow-lg"
-          sizes="(max-width: 768px) 100vw, 20vw"
+          sizes="(max-width: 768px) 100vw, 25vw"
         />
       </div>
     </div>

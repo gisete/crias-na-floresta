@@ -121,7 +121,7 @@ export default function Hero({
               alt="Crias na Floresta"
               width={500}
               height={500}
-              className="w-64 md:w-96 lg:w-[500px] h-auto object-contain drop-shadow-2xl"
+              className="w-80 md:w-96 lg:w-[500px] h-auto object-contain drop-shadow-2xl"
               priority
             />
           )}

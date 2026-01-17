@@ -82,9 +82,9 @@ export default function Navigation() {
 
       {/* Mobile Navigation Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-[var(--color-moss)] z-50 flex flex-col items-center justify-center">
+        <div className="fixed inset-0 bg-[var(--color-light-beige)] z-50 flex flex-col items-center justify-center animate-slide-in-right">
           <button
-            className="absolute top-8 right-8 text-3xl text-white"
+            className="absolute top-8 right-8 text-3xl text-[var(--color-fog-gray)]"
             onClick={() => setIsOpen(false)}
           >
             <i className="fa-solid fa-times"></i>
@@ -94,7 +94,7 @@ export default function Navigation() {
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="text-2xl text-white hover:text-[var(--color-beige-dark)] transition"
+                  className="text-2xl text-[var(--color-fog-gray)] hover:text-[var(--color-mossy-green)] transition"
                   onClick={() => setIsOpen(false)}
                   target={link.target}
                 >
@@ -102,7 +102,7 @@ export default function Navigation() {
                 </Link>
               </li>
             ))}
-            <li className="flex space-x-6 justify-center text-2xl mt-8">
+            <li className="flex space-x-6 justify-center text-2xl mt-8 text-[var(--color-fog-gray)]">
               <a
                 href="https://www.instagram.com/crias_na_floresta/"
                 target="_blank"

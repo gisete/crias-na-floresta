@@ -52,16 +52,16 @@ export default function HomeClient({ pageContent }: HomeClientProps) {
       />
 
       {/* INTRO SECTION */}
-      <section className="py-32 px-6">
+      <section className="pt-16 pb-24 md:py-32 px-6">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl mb-12">{pageContent.introTitle}</h2>
+          <h2 className="text-5xl md:text-6xl mb-8 md:mb-12">{pageContent.introTitle}</h2>
 
           <div
-            className="space-y-8 text-base leading-relaxed font-light"
+            className="space-y-6 md:space-y-8 text-base leading-relaxed font-light"
             dangerouslySetInnerHTML={{ __html: pageContent.introContent }}
           />
 
-          <div className="mt-16">
+          <div className="mt-12 md:mt-16">
             <a
               href={pageContent.introLinkUrl}
               className="text-sm uppercase tracking-widest text-fog-gray border-b border-fog-gray pb-1 hover:opacity-70 transition duration-300"
@@ -76,9 +76,9 @@ export default function HomeClient({ pageContent }: HomeClientProps) {
       </section>
 
       {/* QUOTE SECTION */}
-      <section className="pb-32 px-6 text-center">
+      <section className="pb-16 md:pb-32 px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          <div className="mb-6 flex justify-center opacity-50">
+          <div className="mb-4 md:mb-6 flex justify-center opacity-50">
             <Image
               src={pageContent.quoteIcon}
               alt="Branches and leaves decoration"
@@ -87,7 +87,7 @@ export default function HomeClient({ pageContent }: HomeClientProps) {
               className="w-18 h-18 object-contain rotate-[50deg]"
             />
           </div>
-          <blockquote className="font-cormorant text-fog-gray text-xl md:text-2xl italic mb-6 leading-snug">
+          <blockquote className="font-cormorant text-fog-gray text-2xl md:text-3xl italic mb-4 md:mb-6 leading-snug">
             {pageContent.quoteText}
           </blockquote>
         </div>
@@ -107,16 +107,16 @@ export default function HomeClient({ pageContent }: HomeClientProps) {
 
         {/* Centered Container Box */}
         <div className="relative z-10 bg-mossy-green text-light-beige p-10 md:p-12 max-w-[650px] mx-4 shadow-2xl">
-          <h2 className="!text-light-beige text-4xl md:text-5xl mb-8 text-left">
+          <h2 className="!text-light-beige text-4xl md:text-5xl mb-8 text-center">
             {pageContent.juntaTeTitle}
           </h2>
 
           <div
-            className="space-y-6 text-base font-light leading-relaxed text-left"
+            className="space-y-6 text-base font-light leading-relaxed text-center"
             dangerouslySetInnerHTML={{ __html: pageContent.juntaTeContent }}
           />
 
-          <div className="mt-10 text-left">
+          <div className="mt-10 text-center">
             <a
               href={pageContent.juntaTeLinkUrl}
               className="text-sm uppercase tracking-widest border-b border-light-beige border-opacity-50 pb-1 hover:text-white hover:border-white transition"
@@ -129,10 +129,10 @@ export default function HomeClient({ pageContent }: HomeClientProps) {
       </section>
 
       {/* "POR TRÁS" */}
-      <section className="py-32 px-6 md:px-12 overflow-hidden">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <section className="pt-16 pb-16 md:py-32 px-6 md:px-12 overflow-hidden">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Image Column */}
-          <div className="order-2 md:order-1 relative h-[600px]">
+          <div className="order-2 md:order-1 relative h-[400px] md:h-[600px]">
             <Image
               src={pageContent.guardioesImage}
               alt="Team Member"
@@ -144,14 +144,14 @@ export default function HomeClient({ pageContent }: HomeClientProps) {
 
           {/* Text Column */}
           <div className="order-1 md:order-2 md:pl-12">
-            <h2 className="text-5xl md:text-6xl mb-10">{pageContent.guardioesTitle}</h2>
+            <h2 className="text-5xl md:text-6xl mb-8 md:mb-10">{pageContent.guardioesTitle}</h2>
 
             <div
               className="space-y-6 text-base leading-relaxed font-light"
               dangerouslySetInnerHTML={{ __html: pageContent.guardioesContent }}
             />
 
-            <div className="mt-12">
+            <div className="mt-10 md:mt-12">
               <a
                 href={pageContent.guardioesLinkUrl}
                 className="text-sm uppercase tracking-widest text-fog-gray border-b border-fog-gray pb-1 hover:opacity-70 transition"
@@ -164,7 +164,7 @@ export default function HomeClient({ pageContent }: HomeClientProps) {
       </section>
 
       {/* TESTIMONIAL SECTION */}
-      <section className="relative py-24 md:py-32 min-h-[700px] flex items-center overflow-hidden mb-30">
+      <section className="relative py-24 md:py-32 min-h-[700px] flex items-center overflow-hidden mb-24 md:mb-40">
         {/* Background Image */}
         <div className="absolute inset-0 md:left-[30%]">
           <Image
