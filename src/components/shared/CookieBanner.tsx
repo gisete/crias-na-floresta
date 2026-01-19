@@ -82,55 +82,55 @@ export default function CookieBanner() {
     <>
       {/* Main Cookie Banner */}
       {showBanner && (
-        <div
-          className="fixed bottom-0 left-0 right-0 z-50 animate-slide-up"
-          role="dialog"
-          aria-labelledby="cookie-banner-title"
-          aria-describedby="cookie-banner-description"
-        >
-          <div className="bg-light-beige/95 backdrop-blur-sm text-smoke-gray px-6 py-6 md:px-8 md:py-8 shadow-2xl border-t border-smoke-gray/10">
-            <div className="max-w-6xl mx-auto">
+        <>
+          {/* Backdrop */}
+          <div className="fixed inset-0 bg-black/20 z-40 animate-slide-up" />
+
+          {/* Modal */}
+          <div
+            className="fixed bottom-6 left-6 z-50 animate-slide-up w-[90%] md:w-auto md:max-w-md max-h-[80vh] overflow-y-auto"
+            role="dialog"
+            aria-labelledby="cookie-banner-title"
+            aria-describedby="cookie-banner-description"
+          >
+            <div className="bg-light-beige text-smoke-gray px-6 py-6 shadow-2xl rounded-lg border border-smoke-gray/10">
               {!showCustomize ? (
                 // Main Banner Content
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                  <div className="flex-1">
-                    <h3
-                      id="cookie-banner-title"
-                      className="text-sm md:text-base font-bold mb-2 text-smoke-gray font-body"
-                    >
-                      Este site usa cookies
-                    </h3>
-                    <p
-                      id="cookie-banner-description"
-                      className="text-xs md:text-sm opacity-80 leading-relaxed font-body"
-                    >
-                      Utilizamos cookies essenciais para garantir o funcionamento do site e cookies
-                      opcionais para melhorar a sua experiência. Pode aceitar todos os cookies ou
-                      personalizar as suas preferências.
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-3 md:gap-4 md:flex-shrink-0">
+                <div className="text-center">
+                  <h3
+                    id="cookie-banner-title"
+                    className="text-sm font-bold mb-3 text-smoke-gray font-body"
+                  >
+                    Este site usa cookies
+                  </h3>
+                  <p
+                    id="cookie-banner-description"
+                    className="text-xs opacity-70 leading-relaxed font-body mb-5"
+                  >
+                    Utilizamos cookies para garantir o funcionamento do site e melhorar a sua experiência.{' '}
                     <button
                       onClick={() => setShowCustomize(true)}
-                      className="px-4 py-2 text-xs font-body border border-smoke-gray/30 hover:border-smoke-gray transition text-smoke-gray whitespace-nowrap"
-                      aria-label="Personalizar preferências de cookies"
+                      className="underline hover:no-underline font-medium"
+                      aria-label="Ver mais informações sobre cookies"
                     >
-                      Personalizar
+                      Política de Privacidade
                     </button>
+                  </p>
+
+                  <div className="flex gap-3 justify-center">
                     <button
                       onClick={handleRejectNonEssential}
-                      className="px-4 py-2 text-xs font-body border border-smoke-gray/30 hover:border-smoke-gray transition text-smoke-gray whitespace-nowrap"
+                      className="px-5 py-2.5 text-xs font-body border border-smoke-gray/30 hover:border-smoke-gray transition text-smoke-gray rounded"
                       aria-label="Rejeitar cookies não essenciais"
                     >
-                      Rejeitar Não Essenciais
+                      Rejeitar
                     </button>
                     <button
                       onClick={handleAcceptAll}
-                      className="px-6 py-2 text-xs font-body bg-mossy-green text-light-beige font-semibold hover:bg-mossy-green/90 transition whitespace-nowrap"
+                      className="px-5 py-2.5 text-xs font-body bg-smoke-gray text-light-beige font-semibold hover:bg-smoke-gray/90 transition rounded"
                       aria-label="Aceitar todos os cookies"
                     >
-                      Aceitar Todos
+                      Aceitar
                     </button>
                   </div>
                 </div>
@@ -229,7 +229,7 @@ export default function CookieBanner() {
               )}
             </div>
           </div>
-        </div>
+        </>
       )}
 
       {/* Preferences Button (after initial choice) */}
