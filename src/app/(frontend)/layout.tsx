@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Libre_Franklin } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { OrganizationSchema, WebsiteSchema } from "@/components/seo/StructuredData";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -45,6 +46,8 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased" suppressHydrationWarning>
+        <OrganizationSchema />
+        <WebsiteSchema />
         <Header />
         <main>{children}</main>
         <Footer />

@@ -3,8 +3,34 @@ import Container from '@/components/shared/Container';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Inscrições - Crias na Floresta',
-  description: 'Inscreva o seu filho na Crias na Floresta. Informações sobre horários, idades e como participar.',
+  title: 'Inscrições | Como Participar - Crias na Floresta',
+  description:
+    'Inscreva o seu filho no Crias na Floresta. Informações sobre horários, idades (6 meses a 4 anos), preços e como participar nas sessões Forest School em Caxias, Oeiras. Contacte-nos para mais informações.',
+  keywords: [
+    'inscrições forest school',
+    'como participar',
+    'preços forest school Portugal',
+    'horários sessões',
+    'contacto Crias na Floresta',
+  ],
+  openGraph: {
+    title: 'Inscrições | Crias na Floresta',
+    description:
+      'Inscreva o seu filho nas sessões Forest School. Informações sobre horários, idades e preços.',
+    type: 'website',
+    url: 'https://criasnaFloresta.pt/inscricoes',
+    locale: 'pt_PT',
+    siteName: 'Crias na Floresta',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Inscrições | Crias na Floresta',
+    description:
+      'Inscreva o seu filho nas sessões Forest School. Informações sobre horários, idades e preços.',
+  },
+  alternates: {
+    canonical: 'https://criasnaFloresta.pt/inscricoes',
+  },
 };
 
 export default function Inscricoes() {

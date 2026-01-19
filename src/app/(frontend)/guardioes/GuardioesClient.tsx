@@ -179,7 +179,7 @@ export default function GuardioesClient({ pageContent }: GuardioesClientProps) {
             />
 
             {/* Image */}
-            <div className="relative w-full aspect-square md:aspect-[4/5]">
+            <div className="relative w-full aspect-[4/5]">
               <Image
                 src={pageContent.differenceImage}
                 alt="Mãos na terra"

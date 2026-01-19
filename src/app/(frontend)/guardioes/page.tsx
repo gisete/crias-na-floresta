@@ -1,40 +1,52 @@
 import { getPayload } from 'payload';
 import config from '@payload-config';
 import GuardioesClient from './GuardioesClient';
+import { getImageUrl } from '@/lib/imageHelpers';
+import { richTextToHtml } from '@/lib/richTextToHtml';
+import type { GuardioesPageGlobal } from '@/types/payload';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
 
-// Helper function to safely extract image URL
-const getImageUrl = (image: any, fallback: string): string => {
-  if (typeof image === 'object' && image?.url) {
-    return image.url;
-  }
-  return fallback;
-};
-
-// Helper to convert rich text to HTML (simplified for now)
-const richTextToHtml = (richText: any): string => {
-  if (!richText) return '';
-
-  // If it's already a string, return it
-  if (typeof richText === 'string') return richText;
-
-  // If it's Lexical format, we'll need to parse it
-  // For now, return empty string if not in expected format
-  // TODO: Implement proper Lexical to HTML conversion
-  return '';
+export const metadata: Metadata = {
+  title: 'Guardiões da Floresta | Marta & Pedro - Crias na Floresta',
+  description:
+    'Conheça a Marta e o Pedro, educadores e guardiões do projeto Crias na Floresta. Formados em Forest School, dedicam-se a criar uma conexão profunda entre crianças, famílias e natureza através da educação respeitadora.',
+  keywords: [
+    'forest school leaders',
+    'educadores forest school',
+    'Marta e Pedro',
+    'educação respeitadora',
+    'filosofia forest school',
+    'guardiões da floresta',
+  ],
+  openGraph: {
+    title: 'Guardiões da Floresta | Marta & Pedro',
+    description:
+      'Conheça os educadores por trás do projeto Crias na Floresta e a nossa filosofia de educação na natureza.',
+    type: 'website',
+    url: 'https://criasnaFloresta.pt/guardioes',
+    locale: 'pt_PT',
+    siteName: 'Crias na Floresta',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Guardiões da Floresta | Crias na Floresta',
+    description:
+      'Conheça os educadores por trás do projeto e a nossa filosofia de educação na natureza.',
+  },
+  alternates: {
+    canonical: 'https://criasnaFloresta.pt/guardioes',
+  },
 };
 
 export default async function Guardioes() {
   const payload = await getPayload({ config });
 
-  // Fetch guardioes page settings
-  const guardioesPage = await payload.findGlobal({
-    // @ts-ignore - Global types not yet generated
+  const guardioesPage = (await payload.findGlobal({
     slug: 'guardioes-page',
-  });
+  })) as GuardioesPageGlobal;
 
-  // Default content for fallbacks
   const defaultContent = {
     heroImage: '/photos/hero-a-floresta.jpg',
     heroTitle: 'Guardiões da Floresta',
@@ -123,37 +135,27 @@ export default async function Guardioes() {
     communityImage: '/photos/group-gathering.jpg',
   };
 
-  // Prepare page content with fallbacks
   const pageContent = {
-    heroImage: getImageUrl((guardioesPage as any)?.heroImage, defaultContent.heroImage),
-    heroTitle: (guardioesPage as any)?.heroTitle || defaultContent.heroTitle,
-    aboutTitle: (guardioesPage as any)?.aboutTitle || defaultContent.aboutTitle,
-    martaImage: getImageUrl((guardioesPage as any)?.martaImage, defaultContent.martaImage),
-    pedroImage: getImageUrl((guardioesPage as any)?.pedroImage, defaultContent.pedroImage),
-    martaBio: richTextToHtml((guardioesPage as any)?.martaBio) || defaultContent.martaBio,
-    pedroBio: richTextToHtml((guardioesPage as any)?.pedroBio) || defaultContent.pedroBio,
-    manifestoTitle: (guardioesPage as any)?.manifestoTitle || defaultContent.manifestoTitle,
-    manifestoImage: getImageUrl(
-      (guardioesPage as any)?.manifestoImage,
-      defaultContent.manifestoImage
-    ),
+    heroImage: getImageUrl(guardioesPage?.heroImage, defaultContent.heroImage),
+    heroTitle: guardioesPage?.heroTitle || defaultContent.heroTitle,
+    aboutTitle: guardioesPage?.aboutTitle || defaultContent.aboutTitle,
+    martaImage: getImageUrl(guardioesPage?.martaImage, defaultContent.martaImage),
+    pedroImage: getImageUrl(guardioesPage?.pedroImage, defaultContent.pedroImage),
+    martaBio: richTextToHtml(guardioesPage?.martaBio) || defaultContent.martaBio,
+    pedroBio: richTextToHtml(guardioesPage?.pedroBio) || defaultContent.pedroBio,
+    manifestoTitle: guardioesPage?.manifestoTitle || defaultContent.manifestoTitle,
+    manifestoImage: getImageUrl(guardioesPage?.manifestoImage, defaultContent.manifestoImage),
     manifestoContentPart1:
-      richTextToHtml((guardioesPage as any)?.manifestoContentPart1) || defaultContent.manifestoContentPart1,
-    manifestoQuote: (guardioesPage as any)?.manifestoQuote || defaultContent.manifestoQuote,
+      richTextToHtml(guardioesPage?.manifestoContentPart1) || defaultContent.manifestoContentPart1,
+    manifestoQuote: guardioesPage?.manifestoQuote || defaultContent.manifestoQuote,
     manifestoContentPart2:
-      richTextToHtml((guardioesPage as any)?.manifestoContentPart2) || defaultContent.manifestoContentPart2,
-    differenceTitle: (guardioesPage as any)?.differenceTitle || defaultContent.differenceTitle,
+      richTextToHtml(guardioesPage?.manifestoContentPart2) || defaultContent.manifestoContentPart2,
+    differenceTitle: guardioesPage?.differenceTitle || defaultContent.differenceTitle,
     differenceContent:
-      richTextToHtml((guardioesPage as any)?.differenceContent) || defaultContent.differenceContent,
-    differenceImage: getImageUrl(
-      (guardioesPage as any)?.differenceImage,
-      defaultContent.differenceImage
-    ),
-    communityTitle: (guardioesPage as any)?.communityTitle || defaultContent.communityTitle,
-    communityImage: getImageUrl(
-      (guardioesPage as any)?.communityImage,
-      defaultContent.communityImage
-    ),
+      richTextToHtml(guardioesPage?.differenceContent) || defaultContent.differenceContent,
+    differenceImage: getImageUrl(guardioesPage?.differenceImage, defaultContent.differenceImage),
+    communityTitle: guardioesPage?.communityTitle || defaultContent.communityTitle,
+    communityImage: getImageUrl(guardioesPage?.communityImage, defaultContent.communityImage),
   };
 
   return <GuardioesClient pageContent={pageContent} />;

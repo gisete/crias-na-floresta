@@ -1,32 +1,58 @@
 import { getPayload } from 'payload';
 import config from '@payload-config';
 import GalleryClient from './GalleryClient';
+import { getImageUrl } from '@/lib/imageHelpers';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Galeria | Crias na Floresta - Momentos na Natureza',
+  description:
+    'Veja as memórias das nossas sessões Forest School. Crianças a explorar, brincar e aprender na floresta. Momentos de descoberta, alegria e conexão com a natureza.',
+  keywords: [
+    'galeria forest school',
+    'fotos crianças natureza',
+    'momentos na floresta',
+    'atividades ao ar livre',
+  ],
+  openGraph: {
+    title: 'Galeria | Crias na Floresta',
+    description:
+      'Veja as memórias das nossas sessões Forest School com crianças a explorar e brincar na floresta.',
+    type: 'website',
+    url: 'https://criasnaFloresta.pt/galeria',
+    locale: 'pt_PT',
+    siteName: 'Crias na Floresta',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Galeria | Crias na Floresta',
+    description:
+      'Veja as memórias das nossas sessões Forest School com crianças a explorar e brincar na floresta.',
+  },
+  alternates: {
+    canonical: 'https://criasnaFloresta.pt/galeria',
+  },
+};
 
 export default async function Galeria() {
   const payload = await getPayload({ config });
 
-  // Fetch gallery page settings and images
-  const galleryPage = await payload.findGlobal({
-    // @ts-ignore - Global types not yet generated
+  const galleryPage = (await payload.findGlobal({
     slug: 'gallery-page',
-  });
+  })) as any;
 
-  // Transform the images data
-  const images = ((galleryPage as any)?.images || []).map((item: any) => ({
-    src: typeof item.image === 'object' ? item.image.url : '',
+  const images = (galleryPage?.images || []).map((item: any) => ({
+    src: getImageUrl(item.image, ''),
     alt: item.alt || '',
   }));
 
-  // Prepare page content
   const pageContent = {
-    title: (galleryPage as any)?.title || 'A Nossa Galeria',
-    subtitle: (galleryPage as any)?.subtitle || 'Onde a curiosidade encontra a liberdade.',
-    eyebrow: (galleryPage as any)?.eyebrow || 'Memórias da Natureza',
-    heroImage: typeof (galleryPage as any)?.heroImage === 'object' && (galleryPage as any)?.heroImage?.url
-      ? (galleryPage as any).heroImage.url
-      : '/photos/boy-curious.jpg',
+    title: galleryPage?.title || 'A Nossa Galeria',
+    subtitle: galleryPage?.subtitle || 'Onde a curiosidade encontra a liberdade.',
+    eyebrow: galleryPage?.eyebrow || 'Memórias da Natureza',
+    heroImage: getImageUrl(galleryPage?.heroImage, '/photos/boy-curious.jpg'),
   };
 
   return <GalleryClient images={images} pageContent={pageContent} />;

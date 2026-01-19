@@ -1,72 +1,55 @@
 import { getPayload } from 'payload';
 import config from '@payload-config';
 import HomeClient from './HomeClient';
+import { getImageUrl } from '@/lib/imageHelpers';
+import { richTextToHtml } from '@/lib/richTextToHtml';
+import type { HomePageGlobal } from '@/types/payload';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
 
-// Helper function to safely extract image URL
-const getImageUrl = (image: any, fallback: string): string => {
-  if (typeof image === 'object' && image?.url) {
-    return image.url;
-  }
-  return fallback;
-};
-
-// Helper to convert rich text to HTML
-const richTextToHtml = (richText: any): string => {
-  if (!richText) return '';
-  if (typeof richText === 'string') return richText;
-
-  // Handle Lexical editor format
-  if (richText.root && richText.root.children) {
-    let html = '';
-
-    const processNode = (node: any): string => {
-      if (node.type === 'paragraph') {
-        const content = node.children?.map((child: any) => processNode(child)).join('') || '';
-        return `<p>${content}</p>`;
-      }
-
-      if (node.type === 'text') {
-        let text = node.text || '';
-        if (node.format & 1) text = `<strong>${text}</strong>`; // bold
-        if (node.format & 2) text = `<em>${text}</em>`; // italic
-        return text;
-      }
-
-      if (node.type === 'linebreak') {
-        return '<br />';
-      }
-
-      // Handle other node types with children
-      if (node.children) {
-        return node.children.map((child: any) => processNode(child)).join('');
-      }
-
-      return '';
-    };
-
-    richText.root.children.forEach((node: any) => {
-      html += processNode(node);
-    });
-
-    return html;
-  }
-
-  return '';
+export const metadata: Metadata = {
+  title: 'Crias na Floresta | Forest School Portugal - Educação na Natureza',
+  description:
+    'Crias na Floresta é um projeto de Forest School em Portugal que oferece sessões regulares na natureza para crianças dos 6 meses aos 4 anos. Promovemos conexão profunda com a natureza através do brincar livre e respeito pelo ambiente.',
+  keywords: [
+    'forest school Portugal',
+    'educação na natureza',
+    'escola na floresta',
+    'forest school',
+    'educação infantil',
+    'natureza crianças',
+    'outdoor learning',
+    'Lisboa',
+    'Caxias',
+    'Oeiras',
+  ],
+  openGraph: {
+    title: 'Crias na Floresta | Forest School em Portugal',
+    description:
+      'Promovemos a conexão profunda das crianças com a natureza através do Forest School. Sessões regulares para bebés e crianças pequenas.',
+    type: 'website',
+    url: 'https://criasnaFloresta.pt',
+    locale: 'pt_PT',
+    siteName: 'Crias na Floresta',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Crias na Floresta | Forest School Portugal',
+    description:
+      'Promovemos a conexão profunda das crianças com a natureza através do Forest School.',
+  },
+  alternates: {
+    canonical: 'https://criasnaFloresta.pt',
+  },
 };
 
 export default async function Home() {
   const payload = await getPayload({ config });
 
-  // Fetch home page settings
-  const homePage = await payload.findGlobal({
-    // @ts-ignore - Global types not yet generated
+  const homePage = (await payload.findGlobal({
     slug: 'home-page',
-  });
-
-  // Debug: log what we got from Payload
-  console.log('HomePage data:', JSON.stringify(homePage, null, 2));
+  })) as HomePageGlobal;
 
   // Default testimonials
   const defaultTestimonials = [
@@ -130,37 +113,36 @@ export default async function Home() {
     testimonialBackgroundImage: '/photos/home-bg-comunidade.webp',
   };
 
-  // Prepare page content with fallbacks
   const pageContent = {
     heroVideoUrl:
-      (homePage as any)?.heroVideoUrl || getImageUrl((homePage as any)?.heroVideo, defaultContent.heroVideoUrl),
-    heroPlaceholder: getImageUrl((homePage as any)?.heroPlaceholder, defaultContent.heroPlaceholder),
-    heroFallbackImage: getImageUrl((homePage as any)?.heroFallbackImage, defaultContent.heroFallbackImage),
-    heroLogo: getImageUrl((homePage as any)?.logo, defaultContent.heroLogo),
-    introTitle: (homePage as any)?.introTitle || defaultContent.introTitle,
-    introContent: richTextToHtml((homePage as any)?.introContent) || defaultContent.introContent,
-    introLinkText: (homePage as any)?.introLinkText || defaultContent.introLinkText,
-    introLinkUrl: (homePage as any)?.introLinkUrl || defaultContent.introLinkUrl,
-    quoteText: (homePage as any)?.quoteText || defaultContent.quoteText,
-    quoteIcon: getImageUrl((homePage as any)?.quoteIcon, defaultContent.quoteIcon),
-    juntaTeTitle: (homePage as any)?.juntaTeTitle || defaultContent.juntaTeTitle,
-    juntaTeContent: richTextToHtml((homePage as any)?.juntaTeContent) || defaultContent.juntaTeContent,
-    juntaTeImage: getImageUrl((homePage as any)?.juntaTeImage, defaultContent.juntaTeImage),
-    juntaTeLinkText: (homePage as any)?.juntaTeLinkText || defaultContent.juntaTeLinkText,
-    juntaTeLinkUrl: (homePage as any)?.juntaTeLinkUrl || defaultContent.juntaTeLinkUrl,
-    guardioesTitle: (homePage as any)?.guardioesTitle || defaultContent.guardioesTitle,
-    guardioesContent: richTextToHtml((homePage as any)?.guardioesContent) || defaultContent.guardioesContent,
-    guardioesImage: getImageUrl((homePage as any)?.guardioesImage, defaultContent.guardioesImage),
-    guardioesLinkText: (homePage as any)?.guardioesLinkText || defaultContent.guardioesLinkText,
-    guardioesLinkUrl: (homePage as any)?.guardioesLinkUrl || defaultContent.guardioesLinkUrl,
-    testimonialTitle: (homePage as any)?.testimonialTitle || defaultContent.testimonialTitle,
+      homePage?.heroVideoUrl || getImageUrl(homePage?.heroVideo, defaultContent.heroVideoUrl),
+    heroPlaceholder: getImageUrl(homePage?.heroPlaceholder, defaultContent.heroPlaceholder),
+    heroFallbackImage: getImageUrl(homePage?.heroFallbackImage, defaultContent.heroFallbackImage),
+    heroLogo: getImageUrl(homePage?.logo, defaultContent.heroLogo),
+    introTitle: homePage?.introTitle || defaultContent.introTitle,
+    introContent: richTextToHtml(homePage?.introContent) || defaultContent.introContent,
+    introLinkText: homePage?.introLinkText || defaultContent.introLinkText,
+    introLinkUrl: homePage?.introLinkUrl || defaultContent.introLinkUrl,
+    quoteText: homePage?.quoteText || defaultContent.quoteText,
+    quoteIcon: getImageUrl(homePage?.quoteIcon, defaultContent.quoteIcon),
+    juntaTeTitle: homePage?.juntaTeTitle || defaultContent.juntaTeTitle,
+    juntaTeContent: richTextToHtml(homePage?.juntaTeContent) || defaultContent.juntaTeContent,
+    juntaTeImage: getImageUrl(homePage?.juntaTeImage, defaultContent.juntaTeImage),
+    juntaTeLinkText: homePage?.juntaTeLinkText || defaultContent.juntaTeLinkText,
+    juntaTeLinkUrl: homePage?.juntaTeLinkUrl || defaultContent.juntaTeLinkUrl,
+    guardioesTitle: homePage?.guardioesTitle || defaultContent.guardioesTitle,
+    guardioesContent: richTextToHtml(homePage?.guardioesContent) || defaultContent.guardioesContent,
+    guardioesImage: getImageUrl(homePage?.guardioesImage, defaultContent.guardioesImage),
+    guardioesLinkText: homePage?.guardioesLinkText || defaultContent.guardioesLinkText,
+    guardioesLinkUrl: homePage?.guardioesLinkUrl || defaultContent.guardioesLinkUrl,
+    testimonialTitle: homePage?.testimonialTitle || defaultContent.testimonialTitle,
     testimonialBackgroundImage: getImageUrl(
-      (homePage as any)?.testimonialBackgroundImage,
+      homePage?.testimonialBackgroundImage,
       defaultContent.testimonialBackgroundImage
     ),
     testimonials:
-      (homePage as any)?.testimonials && (homePage as any).testimonials.length > 0
-        ? (homePage as any).testimonials
+      homePage?.testimonials && homePage.testimonials.length > 0
+        ? homePage.testimonials
         : defaultTestimonials,
   };
 

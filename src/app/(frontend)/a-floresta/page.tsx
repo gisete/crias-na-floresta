@@ -2,88 +2,53 @@ import { getPayload } from 'payload';
 import config from '@payload-config';
 import AFlorestaClient from './AFlorestaClient';
 import type { Metadata } from 'next';
+import { getImageUrl } from '@/lib/imageHelpers';
+import { richTextToHtml } from '@/lib/richTextToHtml';
+import type { FlorestaPageGlobal } from '@/types/payload';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Crias Na Floresta | A Floresta',
+  title: 'A Floresta | Crias na Floresta - Forest School em Portugal',
   description:
-    'Descubra o nosso espaço na floresta, onde as crianças aprendem e exploram através do Forest School.',
-};
-
-// Helper function to safely extract image URL
-const getImageUrl = (image: any, fallback: string): string => {
-  if (typeof image === 'object' && image?.url) {
-    return image.url;
-  }
-  return fallback;
-};
-
-// Helper to convert rich text to HTML
-const richTextToHtml = (richText: any): string => {
-  if (!richText) return '';
-  if (typeof richText === 'string') return richText;
-
-  // Handle Lexical editor format
-  if (richText.root && richText.root.children) {
-    let html = '';
-
-    const processNode = (node: any): string => {
-      if (node.type === 'paragraph') {
-        const content = node.children?.map((child: any) => processNode(child)).join('') || '';
-        return `<p>${content}</p>`;
-      }
-
-      if (node.type === 'list') {
-        const tag = node.listType === 'bullet' ? 'ul' : 'ol';
-        const content = node.children?.map((child: any) => processNode(child)).join('') || '';
-        return `<${tag} class="space-y-2 list-disc pl-4 marker:text-white/40">${content}</${tag}>`;
-      }
-
-      if (node.type === 'listitem') {
-        const content = node.children?.map((child: any) => processNode(child)).join('') || '';
-        return `<li>${content}</li>`;
-      }
-
-      if (node.type === 'text') {
-        let text = node.text || '';
-        if (node.format & 1) text = `<strong>${text}</strong>`; // bold
-        if (node.format & 2) text = `<em>${text}</em>`; // italic
-        return text;
-      }
-
-      if (node.type === 'linebreak') {
-        return '<br />';
-      }
-
-      // Handle other node types with children
-      if (node.children) {
-        return node.children.map((child: any) => processNode(child)).join('');
-      }
-
-      return '';
-    };
-
-    richText.root.children.forEach((node: any) => {
-      html += processNode(node);
-    });
-
-    return html;
-  }
-
-  return '';
+    'Descubra o nosso espaço na floresta em Caxias, Oeiras. Sessões Forest School regulares para crianças dos 6 meses aos 4 anos. Aprendizagem na natureza, brincar livre e conexão profunda com o ambiente natural. Consulte horários, preços e como participar.',
+  keywords: [
+    'forest school Portugal',
+    'sessões na floresta',
+    'preços forest school',
+    'Caxias',
+    'Oeiras',
+    'Lisboa',
+    'educação na natureza Portugal',
+    'atividades crianças natureza',
+  ],
+  openGraph: {
+    title: 'A Floresta | Crias na Floresta',
+    description:
+      'Sessões Forest School regulares para crianças dos 6 meses aos 4 anos em Caxias, Oeiras.',
+    type: 'website',
+    url: 'https://criasnaFloresta.pt/a-floresta',
+    locale: 'pt_PT',
+    siteName: 'Crias na Floresta',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'A Floresta | Crias na Floresta',
+    description:
+      'Sessões Forest School regulares para crianças dos 6 meses aos 4 anos em Caxias, Oeiras.',
+  },
+  alternates: {
+    canonical: 'https://criasnaFloresta.pt/a-floresta',
+  },
 };
 
 export default async function AFloresta() {
   const payload = await getPayload({ config });
 
-  // Fetch a-floresta page settings
-  const florestaPage = await payload.findGlobal({
-    // @ts-ignore - Global types not yet generated
+  const florestaPage = (await payload.findGlobal({
     slug: 'a-floresta-page',
-  });
+  })) as FlorestaPageGlobal;
 
-  // Default content
   const defaultContent = {
     heroImage: '/photos/hero-a-floresta2.webp',
     heroTitle: 'A Floresta',
@@ -145,53 +110,47 @@ export default async function AFloresta() {
     videoUrl: 'https://www.youtube.com/embed/Z4xGgmCEWxE?rel=0',
   };
 
-  // Prepare page content with fallbacks
   const pageContent = {
-    heroImage: getImageUrl((florestaPage as any)?.heroImage, defaultContent.heroImage),
-    heroTitle: (florestaPage as any)?.heroTitle || defaultContent.heroTitle,
-    forestSchoolTitle: (florestaPage as any)?.forestSchoolTitle || defaultContent.forestSchoolTitle,
+    heroImage: getImageUrl(florestaPage?.heroImage, defaultContent.heroImage),
+    heroTitle: florestaPage?.heroTitle || defaultContent.heroTitle,
+    forestSchoolTitle: florestaPage?.forestSchoolTitle || defaultContent.forestSchoolTitle,
     forestSchoolImages:
-      (florestaPage as any)?.forestSchoolImages &&
-      (florestaPage as any).forestSchoolImages.length > 0
-        ? (florestaPage as any).forestSchoolImages.map((img: any) => ({
+      florestaPage?.forestSchoolImages && florestaPage.forestSchoolImages.length > 0
+        ? florestaPage.forestSchoolImages.map((img) => ({
             src: getImageUrl(img.image, ''),
             alt: img.alt || '',
           }))
         : defaultContent.forestSchoolImages,
     forestSchoolContent:
-      richTextToHtml((florestaPage as any)?.forestSchoolContent) ||
-      defaultContent.forestSchoolContent,
-    sentirTitle: (florestaPage as any)?.sentirTitle || defaultContent.sentirTitle,
+      richTextToHtml(florestaPage?.forestSchoolContent) || defaultContent.forestSchoolContent,
+    sentirTitle: florestaPage?.sentirTitle || defaultContent.sentirTitle,
     features:
-      (florestaPage as any)?.features && (florestaPage as any).features.length > 0
-        ? (florestaPage as any).features.map((feature: any) => ({
+      florestaPage?.features && florestaPage.features.length > 0
+        ? florestaPage.features.map((feature) => ({
             icon: getImageUrl(feature.icon, ''),
             title: feature.title || '',
             items: feature.items || [],
           }))
         : defaultContent.features,
-    sessoesTitle: (florestaPage as any)?.sessoesTitle || defaultContent.sessoesTitle,
-    sessoesIntro: (florestaPage as any)?.sessoesIntro || defaultContent.sessoesIntro,
+    sessoesTitle: florestaPage?.sessoesTitle || defaultContent.sessoesTitle,
+    sessoesIntro: florestaPage?.sessoesIntro || defaultContent.sessoesIntro,
     comoFuncionaStoryTitle:
-      (florestaPage as any)?.comoFuncionaStoryTitle || defaultContent.comoFuncionaStoryTitle,
+      florestaPage?.comoFuncionaStoryTitle || defaultContent.comoFuncionaStoryTitle,
     comoFuncionaStoryContent:
-      richTextToHtml((florestaPage as any)?.comoFuncionaStoryContent) ||
+      richTextToHtml(florestaPage?.comoFuncionaStoryContent) ||
       defaultContent.comoFuncionaStoryContent,
-    comoFuncionaTitle: (florestaPage as any)?.comoFuncionaTitle || defaultContent.comoFuncionaTitle,
-    ageInfo: richTextToHtml((florestaPage as any)?.ageInfo) || defaultContent.ageInfo,
-    scheduleInfo:
-      richTextToHtml((florestaPage as any)?.scheduleInfo) || defaultContent.scheduleInfo,
-    locationInfo:
-      richTextToHtml((florestaPage as any)?.locationInfo) || defaultContent.locationInfo,
-    pricingInfo: richTextToHtml((florestaPage as any)?.pricingInfo) || defaultContent.pricingInfo,
+    comoFuncionaTitle: florestaPage?.comoFuncionaTitle || defaultContent.comoFuncionaTitle,
+    ageInfo: richTextToHtml(florestaPage?.ageInfo) || defaultContent.ageInfo,
+    scheduleInfo: richTextToHtml(florestaPage?.scheduleInfo) || defaultContent.scheduleInfo,
+    locationInfo: richTextToHtml(florestaPage?.locationInfo) || defaultContent.locationInfo,
+    pricingInfo: richTextToHtml(florestaPage?.pricingInfo) || defaultContent.pricingInfo,
     monthlyPacksInfo:
-      richTextToHtml((florestaPage as any)?.monthlyPacksInfo) || defaultContent.monthlyPacksInfo,
-    photoPacksInfo:
-      richTextToHtml((florestaPage as any)?.photoPacksInfo) || defaultContent.photoPacksInfo,
-    disclaimer: richTextToHtml((florestaPage as any)?.disclaimer) || defaultContent.disclaimer,
-    inscricaoLink: (florestaPage as any)?.inscricaoLink || defaultContent.inscricaoLink,
-    videoTitle: (florestaPage as any)?.videoTitle || defaultContent.videoTitle,
-    videoUrl: (florestaPage as any)?.videoUrl || defaultContent.videoUrl,
+      richTextToHtml(florestaPage?.monthlyPacksInfo) || defaultContent.monthlyPacksInfo,
+    photoPacksInfo: richTextToHtml(florestaPage?.photoPacksInfo) || defaultContent.photoPacksInfo,
+    disclaimer: richTextToHtml(florestaPage?.disclaimer) || defaultContent.disclaimer,
+    inscricaoLink: florestaPage?.inscricaoLink || defaultContent.inscricaoLink,
+    videoTitle: florestaPage?.videoTitle || defaultContent.videoTitle,
+    videoUrl: florestaPage?.videoUrl || defaultContent.videoUrl,
   };
 
   return <AFlorestaClient pageContent={pageContent} />;
