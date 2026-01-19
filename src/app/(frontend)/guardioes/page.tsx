@@ -9,31 +9,19 @@ import type { Metadata } from 'next';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Guardiões da Floresta | Marta & Pedro - Crias na Floresta',
-  description:
-    'Conheça a Marta e o Pedro, educadores e guardiões do projeto Crias na Floresta. Formados em Forest School, dedicam-se a criar uma conexão profunda entre crianças, famílias e natureza através da educação respeitadora.',
-  keywords: [
-    'forest school leaders',
-    'educadores forest school',
-    'Marta e Pedro',
-    'educação respeitadora',
-    'filosofia forest school',
-    'guardiões da floresta',
-  ],
+  title: 'Guardiões da Floresta | Educadores Certificados',
+  description: 'Conheça Marta e Pedro, educadores certificados Forest School que lideram o projeto Crias na Floresta em Oeiras. Filosofia e compromisso com a educação na natureza.',
   openGraph: {
-    title: 'Guardiões da Floresta | Marta & Pedro',
-    description:
-      'Conheça os educadores por trás do projeto Crias na Floresta e a nossa filosofia de educação na natureza.',
+    title: 'Guardiões da Floresta | Crias na Floresta',
+    description: 'Conheça os educadores por trás do projeto',
     type: 'website',
     url: 'https://criasnaFloresta.pt/guardioes',
     locale: 'pt_PT',
-    siteName: 'Crias na Floresta',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Guardiões da Floresta | Crias na Floresta',
-    description:
-      'Conheça os educadores por trás do projeto e a nossa filosofia de educação na natureza.',
+    description: 'Conheça os educadores por trás do projeto',
   },
   alternates: {
     canonical: 'https://criasnaFloresta.pt/guardioes',

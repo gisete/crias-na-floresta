@@ -7,8 +7,12 @@ import type { Metadata } from 'next';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Crias Na Floresta | Política de Cookies',
-  description: 'Política de Cookies da Crias na Floresta',
+  title: 'Política de Cookies | Crias na Floresta',
+  description: 'Política de Cookies da Crias na Floresta. Como utilizamos cookies no nosso website.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default async function PoliticaDeCookies() {

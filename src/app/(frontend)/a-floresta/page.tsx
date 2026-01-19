@@ -9,33 +9,19 @@ import type { FlorestaPageGlobal } from '@/types/payload';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'A Floresta | Crias na Floresta - Forest School em Portugal',
-  description:
-    'Descubra o nosso espaço na floresta em Caxias, Oeiras. Sessões Forest School regulares para crianças dos 6 meses aos 4 anos. Aprendizagem na natureza, brincar livre e conexão profunda com o ambiente natural. Consulte horários, preços e como participar.',
-  keywords: [
-    'forest school Portugal',
-    'sessões na floresta',
-    'preços forest school',
-    'Caxias',
-    'Oeiras',
-    'Lisboa',
-    'educação na natureza Portugal',
-    'atividades crianças natureza',
-  ],
+  title: 'O Que é Forest School | Crias na Floresta',
+  description: 'Descubra a abordagem Forest School: sessões regulares na floresta para crianças dos 6 meses aos 4 anos. Horários, preços e como funciona em Oeiras, Lisboa.',
   openGraph: {
-    title: 'A Floresta | Crias na Floresta',
-    description:
-      'Sessões Forest School regulares para crianças dos 6 meses aos 4 anos em Caxias, Oeiras.',
+    title: 'O Que é Forest School | Crias na Floresta',
+    description: 'Descubra a abordagem Forest School em Oeiras, Lisboa',
     type: 'website',
     url: 'https://criasnaFloresta.pt/a-floresta',
     locale: 'pt_PT',
-    siteName: 'Crias na Floresta',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'A Floresta | Crias na Floresta',
-    description:
-      'Sessões Forest School regulares para crianças dos 6 meses aos 4 anos em Caxias, Oeiras.',
+    title: 'O Que é Forest School | Crias na Floresta',
+    description: 'Descubra a abordagem Forest School em Oeiras, Lisboa',
   },
   alternates: {
     canonical: 'https://criasnaFloresta.pt/a-floresta',

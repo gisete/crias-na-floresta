@@ -7,29 +7,19 @@ import type { Metadata } from 'next';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Galeria | Crias na Floresta - Momentos na Natureza',
-  description:
-    'Veja as memórias das nossas sessões Forest School. Crianças a explorar, brincar e aprender na floresta. Momentos de descoberta, alegria e conexão com a natureza.',
-  keywords: [
-    'galeria forest school',
-    'fotos crianças natureza',
-    'momentos na floresta',
-    'atividades ao ar livre',
-  ],
+  title: 'Galeria de Fotos | Momentos na Floresta',
+  description: 'Veja momentos especiais das sessões Forest School: crianças a explorar, brincar e aprender na natureza em Oeiras, Lisboa.',
   openGraph: {
     title: 'Galeria | Crias na Floresta',
-    description:
-      'Veja as memórias das nossas sessões Forest School com crianças a explorar e brincar na floresta.',
+    description: 'Momentos especiais das aventuras na floresta',
     type: 'website',
     url: 'https://criasnaFloresta.pt/galeria',
     locale: 'pt_PT',
-    siteName: 'Crias na Floresta',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Galeria | Crias na Floresta',
-    description:
-      'Veja as memórias das nossas sessões Forest School com crianças a explorar e brincar na floresta.',
+    description: 'Momentos especiais das aventuras na floresta',
   },
   alternates: {
     canonical: 'https://criasnaFloresta.pt/galeria',

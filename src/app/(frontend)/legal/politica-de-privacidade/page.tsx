@@ -7,8 +7,12 @@ import type { Metadata } from 'next';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Crias Na Floresta | Política de Privacidade',
-  description: 'Política de Privacidade da Crias na Floresta',
+  title: 'Política de Privacidade | Crias na Floresta',
+  description: 'Política de Privacidade da Crias na Floresta. Como tratamos e protegemos os seus dados pessoais.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default async function PoliticaDePrivacidade() {

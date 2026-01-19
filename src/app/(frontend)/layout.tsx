@@ -22,14 +22,22 @@ const libreFranklin = Libre_Franklin({
 });
 
 export const metadata: Metadata = {
-  title: "Crias Na Floresta",
-  description: "Forest school, aprendizagem na natureza",
-  keywords: ["escola da floresta", "educação na natureza", "Portugal", "crianças", "aprendizagem ao ar livre"],
+  title: "Crias na Floresta",
+  description: "Forest school em Oeiras, Lisboa. Aprendizagem na natureza para crianças dos 6 meses aos 4 anos.",
   authors: [{ name: "Crias na Floresta" }],
   openGraph: {
-    title: "Crias Na Floresta",
-    description: "Forest school, aprendizagem na natureza",
+    title: "Crias na Floresta",
+    description: "Forest school em Oeiras, Lisboa",
     type: "website",
+    locale: "pt_PT",
+    siteName: "Crias na Floresta",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://criasnaFloresta.pt',
   },
 };
 

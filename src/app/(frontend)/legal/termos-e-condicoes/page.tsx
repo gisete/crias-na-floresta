@@ -7,8 +7,12 @@ import type { Metadata } from 'next';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Crias Na Floresta | Termos e Condições',
-  description: 'Termos e Condições da Crias na Floresta',
+  title: 'Termos e Condições | Crias na Floresta',
+  description: 'Termos e Condições de utilização do website Crias na Floresta.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default async function TermosECondicoes() {
