@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Libre_Franklin } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CookieBanner from "@/components/shared/CookieBanner";
 import Script from "next/script";
 
 const cormorant = Cormorant_Garamond({
@@ -88,6 +89,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );
