@@ -82,21 +82,16 @@ export default function CookieBanner() {
     <>
       {/* Main Cookie Banner */}
       {showBanner && (
-        <>
-          {/* Backdrop */}
-          <div className="fixed inset-0 bg-black/20 z-40 animate-slide-up" />
-
-          {/* Modal */}
-          <div
-            className="fixed bottom-6 left-6 z-50 animate-slide-up w-[90%] md:w-auto md:max-w-md max-h-[80vh] overflow-y-auto"
-            role="dialog"
-            aria-labelledby="cookie-banner-title"
-            aria-describedby="cookie-banner-description"
-          >
+        <div
+          className="fixed bottom-6 left-6 z-50 animate-slide-up w-[90%] md:w-auto md:max-w-md max-h-[80vh] overflow-y-auto"
+          role="dialog"
+          aria-labelledby="cookie-banner-title"
+          aria-describedby="cookie-banner-description"
+        >
             <div className="bg-light-beige text-smoke-gray px-6 py-6 shadow-2xl rounded-lg border border-smoke-gray/10">
               {!showCustomize ? (
                 // Main Banner Content
-                <div className="text-center">
+                <div>
                   <h3
                     id="cookie-banner-title"
                     className="text-sm font-bold mb-3 text-smoke-gray font-body"
@@ -117,7 +112,7 @@ export default function CookieBanner() {
                     </button>
                   </p>
 
-                  <div className="flex gap-3 justify-center">
+                  <div className="flex gap-3 justify-end">
                     <button
                       onClick={handleRejectNonEssential}
                       className="px-5 py-2.5 text-xs font-body border border-smoke-gray/30 hover:border-smoke-gray transition text-smoke-gray rounded"
@@ -228,8 +223,7 @@ export default function CookieBanner() {
                 </div>
               )}
             </div>
-          </div>
-        </>
+        </div>
       )}
 
       {/* Preferences Button (after initial choice) */}
