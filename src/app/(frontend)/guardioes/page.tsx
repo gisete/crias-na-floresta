@@ -44,6 +44,7 @@ export default async function Guardioes() {
   const payload = await getPayload({ config });
 
   const guardioesPage = (await payload.findGlobal({
+    // @ts-expect-error - Payload global slug typing
     slug: 'guardioes-page',
   })) as GuardioesPageGlobal;
 

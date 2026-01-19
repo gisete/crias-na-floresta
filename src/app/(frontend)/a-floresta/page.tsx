@@ -46,6 +46,7 @@ export default async function AFloresta() {
   const payload = await getPayload({ config });
 
   const florestaPage = (await payload.findGlobal({
+    // @ts-expect-error - Payload global slug typing
     slug: 'a-floresta-page',
   })) as FlorestaPageGlobal;
 

@@ -40,6 +40,7 @@ export default async function Galeria() {
   const payload = await getPayload({ config });
 
   const galleryPage = (await payload.findGlobal({
+    // @ts-expect-error - Payload global slug typing
     slug: 'gallery-page',
   })) as any;
 

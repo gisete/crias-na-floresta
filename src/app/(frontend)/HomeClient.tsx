@@ -121,6 +121,7 @@ export default function HomeClient({ pageContent }: HomeClientProps) {
               href={pageContent.juntaTeLinkUrl}
               className="text-sm uppercase tracking-widest border-b border-light-beige border-opacity-50 pb-1 hover:text-white hover:border-white transition"
               target="_blank"
+              rel="noopener noreferrer"
             >
               {pageContent.juntaTeLinkText}
             </a>

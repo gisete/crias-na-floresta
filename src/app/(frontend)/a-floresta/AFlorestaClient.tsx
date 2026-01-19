@@ -176,6 +176,7 @@ export default function AFlorestaClient({ pageContent }: AFlorestaClientProps) {
                 <a
                   href={pageContent.inscricaoLink}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm uppercase tracking-[0.2em] text-fog-gray border-b border-fog-gray pb-1 hover:opacity-60 transition"
                 >
                   Inscreve-te &rarr;

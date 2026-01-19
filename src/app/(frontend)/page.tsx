@@ -48,6 +48,7 @@ export default async function Home() {
   const payload = await getPayload({ config });
 
   const homePage = (await payload.findGlobal({
+    // @ts-expect-error - Payload global slug typing
     slug: 'home-page',
   })) as HomePageGlobal;
 

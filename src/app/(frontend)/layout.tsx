@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Libre_Franklin } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { OrganizationSchema, WebsiteSchema } from "@/components/seo/StructuredData";
+import Script from "next/script";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -46,8 +46,45 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased" suppressHydrationWarning>
-        <OrganizationSchema />
-        <WebsiteSchema />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'EducationalOrganization',
+              name: 'Crias na Floresta',
+              url: 'https://criasnaFloresta.pt',
+              logo: 'https://criasnaFloresta.pt/images/crias-na-floresta-logo.png',
+              description: 'Forest School em Portugal dedicado à educação na natureza para crianças dos 6 meses aos 4 anos.',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Caxias',
+                addressRegion: 'Oeiras',
+                addressCountry: 'PT',
+              },
+              contactPoint: {
+                '@type': 'ContactPoint',
+                email: 'criasnafloresta@gmail.com',
+                contactType: 'customer service',
+              },
+            }),
+          }}
+        />
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Crias na Floresta',
+              url: 'https://criasnaFloresta.pt',
+              description: 'Forest School em Portugal dedicado à educação na natureza para crianças.',
+              inLanguage: 'pt-PT',
+            }),
+          }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />
