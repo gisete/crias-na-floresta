@@ -1,5 +1,6 @@
 import { postgresAdapter } from '@payloadcms/db-postgres';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage';
 import path from 'path';
 import { buildConfig } from 'payload';
 import { fileURLToPath } from 'url';
@@ -13,6 +14,7 @@ import { GuardioesPage } from './globals/GuardioesPage';
 import { AFlorestaPage } from './globals/AFlorestaPage';
 import { HomePage } from './globals/HomePage';
 import { LegalPages } from './globals/LegalPages';
+import { supabaseAdapter } from './lib/supabaseStorage';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -37,5 +39,14 @@ export default buildConfig({
     },
   }),
   sharp,
-  plugins: [],
+  plugins: [
+    cloudStoragePlugin({
+      collections: {
+        media: {
+          adapter: supabaseAdapter,
+          disablePayloadAccessControl: true,
+        },
+      },
+    }),
+  ],
 });
