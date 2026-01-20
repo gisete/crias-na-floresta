@@ -4,6 +4,7 @@ import Hero from '@/components/shared/Hero';
 import Image from 'next/image';
 import SessoesGallery from '@/components/shared/SessoesGallery';
 import Container from '@/components/shared/Container';
+import { getYouTubeEmbedUrl } from '@/lib/youtubeHelpers';
 
 interface AFlorestaClientProps {
   pageContent: {
@@ -267,7 +268,7 @@ export default function AFlorestaClient({ pageContent }: AFlorestaClientProps) {
           <div className="relative w-full h-[300px] md:h-[600px] bg-smoke-gray shadow-2xl">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src={pageContent.videoUrl}
+              src={getYouTubeEmbedUrl(pageContent.videoUrl)}
               title={pageContent.videoTitle}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
