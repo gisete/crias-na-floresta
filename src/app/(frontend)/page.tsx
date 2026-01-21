@@ -10,10 +10,12 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Crias na Floresta | Forest School em Oeiras, Lisboa',
-  description: 'Escola da floresta para crianças dos 6 meses aos 4 anos em Oeiras. Aprendizagem na natureza através de sessões regulares com educadores certificados.',
+  description:
+    'Forest School para crianças dos 6 meses aos 4 anos em Oeiras. Através de sessões regulares com profissionais certificados, crianças e famílias a reencontram o ritmo da natureza, despertando cuidado e encantamento por tudo o que vive à nossa volta.',
   openGraph: {
-    title: 'Crias na Floresta | Forest School em Portugal',
-    description: 'Escola da floresta para crianças em Oeiras, Lisboa',
+    title: 'Crias na Floresta | Forest School em Oeiras, Lisboa',
+    description:
+      'Forest School em Oeiras para crianças dos 6 meses aos 4 anos. Sessões regulares com profissionais certificados para reencontrar o ritmo da natureza, despertando cuidado e encantamento pela vida.',
     type: 'website',
     url: 'https://criasnaFloresta.pt',
     locale: 'pt_PT',
@@ -21,8 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Crias na Floresta | Forest School em Portugal',
-    description: 'Escola da floresta para crianças em Oeiras, Lisboa',
+    title: 'Crias na Floresta | Forest School em Oeiras, Lisboa',
+    description:
+      'Forest School em Oeiras para crianças dos 6 meses aos 4 anos. Sessões regulares com profissionais certificados para reencontrar o ritmo da natureza, despertando cuidado e encantamento pela vida.',
   },
   alternates: {
     canonical: 'https://criasnaFloresta.pt',
