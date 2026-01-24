@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/shared/CookieBanner";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -98,6 +99,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );
